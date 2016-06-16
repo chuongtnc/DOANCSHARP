@@ -66,6 +66,11 @@ namespace DOANCUOIKY.GUI
             frmHictoryExam.ShowDialog();
         }
 
+        private void menuTITLEQUESTION_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
