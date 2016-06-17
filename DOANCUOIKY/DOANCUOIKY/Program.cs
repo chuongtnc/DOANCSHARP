@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DOANCUOIKY.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace DOANCUOIKY
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new frmCreateAccount());
         }
     }
 }
