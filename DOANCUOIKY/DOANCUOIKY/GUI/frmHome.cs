@@ -8,36 +8,32 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DOANCUOIKY.GUI;
+using DOANCUOIKY.DTO;
 
 namespace DOANCUOIKY.GUI
 {
     public partial class frmHome : Form
     {
 
-        private string[] userInfo;
-
-        public frmHome(string[] userInfo)
+        public frmHome()
         {
             InitializeComponent();
 
             //Kiểm tra user đã đăng nhập chưa
-            if (userInfo.Count() == 0)
+            if (UserInfoHolder.userInfo.Count() == 0)
             {
                 MessageBox.Show("Chưa đăng nhập");
                 Application.Exit();
             }
-                
 
-            //Gán biến thông tin user được truyền qua từ bên login
-            this.userInfo = userInfo;
 
             //Hiện thông tin user lên màn hình home
-            lbMSSV1.Text = userInfo[2];
-            lbNAME1.Text = userInfo[3];
-            lbPOSITION1.Text = userInfo[4];
+            lbMSSV1.Text = UserInfoHolder.userInfo[2];
+            lbNAME1.Text = UserInfoHolder.userInfo[3];
+            lbPOSITION1.Text = UserInfoHolder.userInfo[4];
 
             //Disable những chức năng thuộc không thuộc Admin
-            if(userInfo[4] == "ADMIN")
+            if (UserInfoHolder.userInfo[4] == "ADMIN")
             {
                 menuSTUDENT.Enabled = false;
             }
@@ -66,9 +62,10 @@ namespace DOANCUOIKY.GUI
             frmHictoryExam.ShowDialog();
         }
 
-        private void menuTITLEQUESTION_Click(object sender, EventArgs e)
+        private void menuTITLE_QUESTION_Click(object sender, EventArgs e)
         {
-
+            frmTitleQuestion frmTitleQuestion = new frmTitleQuestion();
+            frmTitleQuestion.ShowDialog();
         }
 
 

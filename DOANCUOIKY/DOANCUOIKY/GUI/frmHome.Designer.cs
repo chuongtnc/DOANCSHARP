@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.menuHome = new System.Windows.Forms.MenuStrip();
             this.menuTEACHER = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTITLE_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.NEW_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.FIND_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.HICTORY_EXAM = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@
             this.lbNAME1 = new System.Windows.Forms.Label();
             this.lbPOSITION = new System.Windows.Forms.Label();
             this.lbPOSITION1 = new System.Windows.Forms.Label();
-            this.menuTITLEQUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,13 +68,20 @@
             // menuTEACHER
             // 
             this.menuTEACHER.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuTITLEQUESTION,
+            this.menuTITLE_QUESTION,
             this.NEW_QUESTION,
             this.FIND_QUESTION,
             this.HICTORY_EXAM});
             this.menuTEACHER.Name = "menuTEACHER";
             this.menuTEACHER.Size = new System.Drawing.Size(58, 20);
             this.menuTEACHER.Text = "Teacher";
+            // 
+            // menuTITLE_QUESTION
+            // 
+            this.menuTITLE_QUESTION.Name = "menuTITLE_QUESTION";
+            this.menuTITLE_QUESTION.Size = new System.Drawing.Size(156, 22);
+            this.menuTITLE_QUESTION.Text = "Tạo Mã đề";
+            this.menuTITLE_QUESTION.Click += new System.EventHandler(this.menuTITLE_QUESTION_Click);
             // 
             // NEW_QUESTION
             // 
@@ -210,13 +217,6 @@
             this.lbPOSITION1.Text = "Chức vụ  ";
             this.lbPOSITION1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // menuTITLEQUESTION
-            // 
-            this.menuTITLEQUESTION.Name = "menuTITLEQUESTION";
-            this.menuTITLEQUESTION.Size = new System.Drawing.Size(156, 22);
-            this.menuTITLEQUESTION.Text = "Tạo Mã đề";
-            this.menuTITLEQUESTION.Click += new System.EventHandler(this.menuTITLEQUESTION_Click);
-            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +261,6 @@
         private System.Windows.Forms.Label lbPOSITION;
         private System.Windows.Forms.Label lbPOSITION1;
         private System.Windows.Forms.ToolStripMenuItem menuLOGOUT;
-        private System.Windows.Forms.ToolStripMenuItem menuTITLEQUESTION;
+        private System.Windows.Forms.ToolStripMenuItem menuTITLE_QUESTION;
     }
 }

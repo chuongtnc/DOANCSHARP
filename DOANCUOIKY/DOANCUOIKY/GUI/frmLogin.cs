@@ -1,4 +1,5 @@
 ﻿using DOANCUOIKY.BLL;
+using DOANCUOIKY.DTO;
 using DOANCUOIKY.GUI;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,11 @@ namespace DOANCUOIKY
             //Kiểm tra hợp lệ
             if(userInfo.Count() != 0)
             {
+                //Truyền vào biến static userInfo để có thể sử dụng toàn ứng dụng
+                UserInfoHolder.userInfo = userInfo;
+
                 //Khai báo form home
-                frmHome home = new frmHome(userInfo);
+                frmHome home = new frmHome();
 
                 //Ẩn form hiện tại (Login)
                 this.Hide();
