@@ -7,4 +7,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserInfoToValidate" nillable="true" type="tns:UserInfoToValidate" />
+  <xs:complexType name="CreateAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HovaTen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mssv" type="xs:int" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateAccount" nillable="true" type="tns:CreateAccount" />
 </xs:schema>

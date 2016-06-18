@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,16 +15,18 @@ namespace WcfService1
     public class Service1 : IService1
     {
         SqlConnection con = null;
+        SqlCommand cmd;
         public Service1()
         {
-            con = new SqlConnection(@"Data Source=DAOBADAT-PC\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False");
+            con = new SqlConnection(@"Data Source=PE-CHUT\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
+            //comm = con.CreateCommand();
         }
 
         public List<string> LoginUserDetails(UserInfoToValidate userInfoToValidate)
         {
             List<string> usr = new List<string>();
             con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT ID,USERNAME,NO,NAME,POSITION FROM ACCOUNT WHERE USERNAME=@Username AND PASSWORD=@Password", con);
+            cmd = new SqlCommand("SELECT ID,USERNAME,NO,NAME,POSITION FROM ACCOUNT WHERE USERNAME=@Username AND PASSWORD=@Password", con);
             cmd.Parameters.AddWithValue("@Username", userInfoToValidate.Username);
             cmd.Parameters.AddWithValue("@Password", userInfoToValidate.Password);
 
@@ -40,5 +43,36 @@ namespace WcfService1
             con.Close();
             return usr;
         }
+
+        public int InsertCreateAccount(CreateAccount c)
+        {
+            try
+            {
+                cmd = new SqlCommand("INSERT INTO ACCOUNT VALUES(@USERNAME, @PASSWORD @NO, @NAME)", con);
+                //comm.CommandText = "INSERT INTO ACCOUNT VALUES(@USERNAME, @PASSWORD @NO, @NAME)";
+                cmd.Parameters.AddWithValue("USERNAME", c.UserName);
+                cmd.Parameters.AddWithValue("PASSWORD", c.Password);
+                cmd.Parameters.AddWithValue("NO", c.Mssv);
+                cmd.Parameters.AddWithValue("NAME", c.HovaTen);
+
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if(con !=null)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+
     }
 }

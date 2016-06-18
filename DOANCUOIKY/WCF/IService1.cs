@@ -14,6 +14,9 @@ namespace WcfService1
     {
         [OperationContract]
         List<string> LoginUserDetails(UserInfoToValidate userInfoToValidate);
+
+        [OperationContract]
+        int InsertCreateAccount(CreateAccount c);
     }
 
 
