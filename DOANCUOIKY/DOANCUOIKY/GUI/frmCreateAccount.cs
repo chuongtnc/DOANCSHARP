@@ -68,7 +68,7 @@ namespace DOANCUOIKY.GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login login= new Login();
+            frmLogin login = new frmLogin();
             login.ShowDialog();
         }
     }

@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://localhost:49843/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:49843/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
       <xsd:import schemaLocation="http://localhost:49843/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:49843/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_LoginUserDetails_InputMessage">
@@ -13,6 +14,36 @@
   </wsdl:message>
   <wsdl:message name="IService1_LoginUserDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginUserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTitle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataTitle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataTitleByParemeters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataTitleByParemeters" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataTitleByParemeters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataTitleByParemetersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTitle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTitle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTitleResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_InsertCreateAccount_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCreateAccount" />
@@ -25,6 +56,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUserDetails" message="tns:IService1_LoginUserDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginUserDetailsResponse" message="tns:IService1_LoginUserDetails_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddTitle" message="tns:IService1_AddTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddTitleResponse" message="tns:IService1_AddTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataTitle" message="tns:IService1_LoadDataTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataTitleResponse" message="tns:IService1_LoadDataTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataTitleByParemeters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataTitleByParemeters" message="tns:IService1_LoadDataTitleByParemeters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataTitleByParemetersResponse" message="tns:IService1_LoadDataTitleByParemeters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateTitle" message="tns:IService1_UpdateTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateTitleResponse" message="tns:IService1_UpdateTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteTitle" message="tns:IService1_DeleteTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteTitleResponse" message="tns:IService1_DeleteTitle_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="InsertCreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCreateAccount" message="tns:IService1_InsertCreateAccount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCreateAccountResponse" message="tns:IService1_InsertCreateAccount_OutputMessage" />
@@ -34,6 +85,51 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="LoginUserDetails">
       <soap:operation soapAction="http://tempuri.org/IService1/LoginUserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTitle">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataTitle">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataTitleByParemeters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataTitleByParemeters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTitle">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTitle">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteTitle" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -15,13 +15,16 @@ namespace WcfService1
     public class Service1 : IService1
     {
         SqlConnection con = null;
+        SqlDataAdapter da = null;
         SqlCommand cmd;
         public Service1()
         {
-            con = new SqlConnection(@"Data Source=PE-CHUT\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=daobadat-PC\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
             //comm = con.CreateCommand();
         }
 
+
+        //Các Hàm giành cho Login
         public List<string> LoginUserDetails(UserInfoToValidate userInfoToValidate)
         {
             List<string> usr = new List<string>();
@@ -43,6 +46,110 @@ namespace WcfService1
             con.Close();
             return usr;
         }
+        //--------------------
+
+
+        //Các hàm dành cho mã đề
+        public Boolean ValidateIfExistNo(string titleNo)
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT NO FROM TITLE WHERE NO=@titleNo", con);
+            cmd.Parameters.AddWithValue("@titleNo", titleNo);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                con.Close();
+                return true;
+            }
+
+            con.Close();
+            return false;
+        }
+
+        public Boolean AddTitle(string titleNo, string titleName)
+        {
+            if (!ValidateIfExistNo(titleNo))
+            {
+                con.Open();
+
+                cmd = new SqlCommand("INSERT INTO TITLE (NO,NAME) VALUES(@titleNo, @titleName)", con);
+                cmd.Parameters.AddWithValue("@titleNo", titleNo);
+                cmd.Parameters.AddWithValue("@titleName", titleName);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                return true;
+            }
+
+            con.Close();
+            return false;
+
+        }
+
+        public DataTable LoadDataTitle()
+        {
+
+            da = new SqlDataAdapter("SELECT * FROM TITLE", con);
+            var dt = new DataTable("DataTitle");
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable LoadDataTitleByParemeters(string titleNo, string titleName)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("SELECT * FROM TITLE WHERE NO LIKE '%'+ @titleNo +'%' AND NAME LIKE '%'+ @titleName +'%'", con);
+            cmd.Parameters.AddWithValue("@titleNo", titleNo);
+            cmd.Parameters.AddWithValue("@titleName", titleName);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataTitle");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        public Boolean UpdateTitle(string titleID, string titleNo, string titleName)
+        {
+            if (!ValidateIfExistNo(titleNo))
+            {
+                con.Open();
+
+                cmd = new SqlCommand("UPDATE TITLE SET NO = @titleNo, NAME = @titleName WHERE ID = @titleID", con);
+                cmd.Parameters.AddWithValue("@titleNo", titleNo);
+                cmd.Parameters.AddWithValue("@titleName", titleName);
+                cmd.Parameters.AddWithValue("@titleID", titleID);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                return true;
+            }
+
+            con.Close();
+            return false;
+
+        }
+
+
+        public Boolean DeleteTitle(string titleID)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("DELETE FROM TITLE WHERE ID = @titleID", con);
+            cmd.Parameters.AddWithValue("@titleID", titleID);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            return true;
+        }
+        //----------------------
 
         public int InsertCreateAccount(CreateAccount c)
         {

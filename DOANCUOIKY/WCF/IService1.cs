@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -14,6 +15,23 @@ namespace WcfService1
     {
         [OperationContract]
         List<string> LoginUserDetails(UserInfoToValidate userInfoToValidate);
+
+        //Dành cho mã đề
+        [OperationContract]
+        Boolean AddTitle(string titleNo, string titleName);
+
+        [OperationContract]
+        DataTable LoadDataTitle();
+
+        [OperationContract]
+        DataTable LoadDataTitleByParemeters(string titleNo, string titleName);
+
+        [OperationContract]
+        Boolean UpdateTitle(string titleID, string titleNo, string titleName);
+
+        [OperationContract]
+        Boolean DeleteTitle(string titleID);
+        //--------------
 
         [OperationContract]
         int InsertCreateAccount(CreateAccount c);

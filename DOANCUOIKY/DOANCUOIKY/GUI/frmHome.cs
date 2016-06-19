@@ -50,12 +50,6 @@ namespace DOANCUOIKY.GUI
             frmNewQuestion.ShowDialog();
         }
 
-        private void FIND_QUESTION_Click(object sender, EventArgs e)
-        {
-            frmFindQuestion frmfindQuestion = new frmFindQuestion();
-            frmfindQuestion.ShowDialog();
-        }
-
         private void HICTORY_EXAM_Click(object sender, EventArgs e)
         {
             frmHictoryExam frmHictoryExam = new frmHictoryExam();
@@ -64,8 +58,8 @@ namespace DOANCUOIKY.GUI
 
         private void menuTITLE_QUESTION_Click(object sender, EventArgs e)
         {
-            frmTitleQuestion frmTitleQuestion = new frmTitleQuestion();
-            frmTitleQuestion.ShowDialog();
+            frmNewTitleQuestion frmNewTitleQuestion = new frmNewTitleQuestion();
+            frmNewTitleQuestion.ShowDialog();
         }
 
 

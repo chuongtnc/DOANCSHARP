@@ -1,6 +1,5 @@
 ﻿using DOANCUOIKY.BLL;
 using DOANCUOIKY.DTO;
-using DOANCUOIKY.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,12 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DOANCUOIKY
+namespace DOANCUOIKY.GUI
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
         LoginBLL loginBLL = null;
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
 
@@ -55,6 +54,5 @@ namespace DOANCUOIKY
             //Kết thúc chương trinh
             Application.Exit();
         }
-
     }
 }

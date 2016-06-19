@@ -33,7 +33,6 @@
             this.menuTEACHER = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTITLE_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.NEW_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
-            this.FIND_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.HICTORY_EXAM = new System.Windows.Forms.ToolStripMenuItem();
             this.menuSTUDENT = new System.Windows.Forms.ToolStripMenuItem();
             this.EXAM_TEST = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +69,6 @@
             this.menuTEACHER.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTITLE_QUESTION,
             this.NEW_QUESTION,
-            this.FIND_QUESTION,
             this.HICTORY_EXAM});
             this.menuTEACHER.Name = "menuTEACHER";
             this.menuTEACHER.Size = new System.Drawing.Size(58, 20);
@@ -89,13 +87,6 @@
             this.NEW_QUESTION.Size = new System.Drawing.Size(156, 22);
             this.NEW_QUESTION.Text = "Thêm mới câu hỏi";
             this.NEW_QUESTION.Click += new System.EventHandler(this.NEW_QUESTION_Click);
-            // 
-            // FIND_QUESTION
-            // 
-            this.FIND_QUESTION.Name = "FIND_QUESTION";
-            this.FIND_QUESTION.Size = new System.Drawing.Size(156, 22);
-            this.FIND_QUESTION.Text = "Tìm kiếm câu hỏi";
-            this.FIND_QUESTION.Click += new System.EventHandler(this.FIND_QUESTION_Click);
             // 
             // HICTORY_EXAM
             // 
@@ -248,7 +239,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuSTUDENT;
         private System.Windows.Forms.ToolStripMenuItem ABOUT;
         private System.Windows.Forms.ToolStripMenuItem NEW_QUESTION;
-        private System.Windows.Forms.ToolStripMenuItem FIND_QUESTION;
         private System.Windows.Forms.ToolStripMenuItem HICTORY_EXAM;
         private System.Windows.Forms.ToolStripMenuItem EXAM_TEST;
         private System.Windows.Forms.ToolStripMenuItem EXAM;
