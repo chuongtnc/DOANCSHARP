@@ -45,6 +45,36 @@
   <wsdl:message name="IService1_DeleteTitle_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteTitleResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataCategoryByParemeters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataCategoryByParemeters" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataCategoryByParemeters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataCategoryByParemetersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_InsertCreateAccount_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCreateAccount" />
   </wsdl:message>
@@ -75,6 +105,26 @@
     <wsdl:operation name="DeleteTitle">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteTitle" message="tns:IService1_DeleteTitle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteTitleResponse" message="tns:IService1_DeleteTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCategory" message="tns:IService1_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCategoryResponse" message="tns:IService1_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataCategory" message="tns:IService1_LoadDataCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryResponse" message="tns:IService1_LoadDataCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCategoryByParemeters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryByParemeters" message="tns:IService1_LoadDataCategoryByParemeters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryByParemetersResponse" message="tns:IService1_LoadDataCategoryByParemeters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCategory" message="tns:IService1_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateCategoryResponse" message="tns:IService1_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteCategory" message="tns:IService1_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteCategoryResponse" message="tns:IService1_DeleteCategory_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCreateAccount" message="tns:IService1_InsertCreateAccount_InputMessage" />
@@ -130,6 +180,51 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteTitle">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataCategoryByParemeters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataCategoryByParemeters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteCategory" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

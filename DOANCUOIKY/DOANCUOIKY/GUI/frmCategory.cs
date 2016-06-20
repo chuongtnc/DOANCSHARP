@@ -10,31 +10,24 @@ using System.Windows.Forms;
 
 namespace DOANCUOIKY.GUI
 {
-    public partial class frmNewTitleQuestion : Form
+    public partial class frmCategory : Form
     {
-        TitleBLL titleBLL = null;
         CategoryBLL categoryBLL = null;
         DataGridViewRow gvRow = null;
-
-        public frmNewTitleQuestion()
+        public frmCategory()
         {
             InitializeComponent();
 
 
             //Khai báo tầng title business
-            titleBLL = new TitleBLL();
-
-            //Khai báo tầng category business
             categoryBLL = new CategoryBLL();
+
 
             //Mặc định chức năng tạo mới bật trước
             openFunctionAdd();
 
             //Load dữ liệu mã đề
-            LoadDataTitle();
-
-            //Load dữ liệu combobox
-            LoadDataComboBox();
+            LoadDataCategory();
         }
 
         //Thêm mới mã đề
@@ -43,15 +36,15 @@ namespace DOANCUOIKY.GUI
             //Kiểm tra tính hợp lệ
             if (ValidateInput())
             {
-                Boolean check = titleBLL.AddTitle(edtNo.Text, edtName.Text, (int)cbCategory.SelectedValue);
+                Boolean check = categoryBLL.AddCategory(edtNo.Text, edtName.Text);
                 if (check == true)
                 {
                     MessageBox.Show("Thêm thành công !!!");
-                    LoadDataTitle();
+                    LoadDataCategory();
                 }
                 else
                 {
-                    MessageBox.Show("Mã đề bị trùng !!!");
+                    MessageBox.Show("Loại mã đề bị trùng !!!");
                 }
             }
 
@@ -73,11 +66,11 @@ namespace DOANCUOIKY.GUI
             //Kiểm tra tính hợp lệ
             if (ValidateInput())
             {
-                Boolean check = titleBLL.UpdateTitle(gvRow.Cells[0].Value.ToString(), edtNo.Text, edtName.Text, (int)cbCategory.SelectedValue);
+                Boolean check = categoryBLL.UpdateCategory(gvRow.Cells[0].Value.ToString(), edtNo.Text, edtName.Text);
                 if (check == true)
                 {
                     MessageBox.Show("Chỉnh sửa thành công !!!");
-                    LoadDataTitle();
+                    LoadDataCategory();
                 }
                 else
                 {
@@ -94,11 +87,11 @@ namespace DOANCUOIKY.GUI
         //Xóa Mã đề
         private void btRemove_Click(object sender, EventArgs e)
         {
-            Boolean check = titleBLL.DeteleTitle(gvRow.Cells[0].Value.ToString());
+            Boolean check = categoryBLL.DeteleCategory(gvRow.Cells[0].Value.ToString());
             if (check)
             {
                 MessageBox.Show("Xóa thành công");
-                LoadDataTitle();
+                LoadDataCategory();
             }
             else
             {
@@ -110,22 +103,21 @@ namespace DOANCUOIKY.GUI
         //Tìm kiếm mã đề
         private void btFind_Click(object sender, EventArgs e)
         {
-            gvTitle.DataSource = titleBLL.LoadDataTitleByParameters(edtNoSearch.Text, edtNameSearch.Text, (int)cbCategorySearch.SelectedValue);
+            gvCategory.DataSource = categoryBLL.LoadDataCategoryByParameters(edtNoSearch.Text, edtNameSearch.Text);
         }
 
         //Click row truyền dữ liệu vào thông tin mã đề đề chỉnh sửa xóa
-        private void gvTitle_Click(object sender, EventArgs e)
+        private void gvCategory_Click(object sender, EventArgs e)
         {
-            if (gvTitle.CurrentRow != null)
+            if (gvCategory.CurrentRow != null)
             {
                 //Khi row trong griview được click thì sẽ mở chức năng edit
                 openFunctionEdit();
 
-                gvRow = gvTitle.CurrentRow;
+                gvRow = gvCategory.CurrentRow;
                 edtNo.Text = gvRow.Cells[1].Value.ToString();
                 edtName.Text = gvRow.Cells[2].Value.ToString();
-                cbCategory.SelectedValue = (int)gvRow.Cells[3].Value;
-                
+
             }
         }
 
@@ -154,41 +146,21 @@ namespace DOANCUOIKY.GUI
         //-------------------------------------------------
 
         //Hàm load dữ liệu
-        private void LoadDataTitle()
+        private void LoadDataCategory()
         {
-            gvTitle.DataSource = titleBLL.LoadDataTitle();
+            gvCategory.DataSource = categoryBLL.LoadDatacategory();
         }
 
 
         //Hàm kiểm tra thông tin nhập vào
         private Boolean ValidateInput()
         {
-            if(edtNo.Text != "" && edtName.Text != "")
+            if (edtNo.Text != "" && edtName.Text != "")
             {
                 return true;
             }
             return false;
         }
-
-        //Hàm lấy dữ liệu vào combobox category
-        private void LoadDataComboBox()
-        {
-
-            DataTable dt = categoryBLL.LoadDatacategory();
-            DataTable dtSearch = categoryBLL.LoadDatacategory();
-
-            
-            cbCategory.DataSource = dt;
-            cbCategory.ValueMember = "ID";
-            cbCategory.DisplayMember = "Name";
-
-            cbCategorySearch.DataSource = dtSearch;
-            cbCategorySearch.ValueMember = "ID";
-            cbCategorySearch.DisplayMember = "Name";
-
-        }
-
-
 
 
 

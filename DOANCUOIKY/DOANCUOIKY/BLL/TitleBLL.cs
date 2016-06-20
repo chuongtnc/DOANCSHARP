@@ -15,9 +15,9 @@ namespace DOANCUOIKY.BLL
             wcf = new WCF.Service1Client();
         }
 
-        public Boolean AddTitle(string titleNo,string titleName)
+        public Boolean AddTitle(string titleNo,string titleName, int titleCategory)
         {
-            return wcf.AddTitle(titleNo, titleName);
+            return wcf.AddTitle(titleNo, titleName, titleCategory);
         }
 
         public DataTable LoadDataTitle()
@@ -25,14 +25,14 @@ namespace DOANCUOIKY.BLL
             return wcf.LoadDataTitle();
         }
 
-        public DataTable LoadDataTitleByParameters(string titleNo, string titleName)
+        public DataTable LoadDataTitleByParameters(string titleNo, string titleName, int titleCategory)
         {
-            return wcf.LoadDataTitleByParemeters(titleNo,titleName);
+            return wcf.LoadDataTitleByParemeters(titleNo, titleName, titleCategory);
         }
 
-        public Boolean UpdateTitle(string titleID, string titleNo, string titleName)
+        public Boolean UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory)
         {
-            return wcf.UpdateTitle(titleID, titleNo, titleName);
+            return wcf.UpdateTitle(titleID, titleNo, titleName, titleCategory);
         }
 
         public Boolean DeteleTitle(string titleID)

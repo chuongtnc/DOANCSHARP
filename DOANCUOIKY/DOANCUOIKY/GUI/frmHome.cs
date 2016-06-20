@@ -62,6 +62,12 @@ namespace DOANCUOIKY.GUI
             frmNewTitleQuestion.ShowDialog();
         }
 
+        private void menuCATEGORY_Click(object sender, EventArgs e)
+        {
+            frmCategory frmCategory = new frmCategory();
+            frmCategory.ShowDialog();
+        }
+
 
     }
 }

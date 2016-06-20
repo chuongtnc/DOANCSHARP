@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CategoryBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\TitleBLL.cs" />
     <Compile Include="DTO\UserInfoHolder.cs" />
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="GUI\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmCreateAccount.cs">
       <SubType>Form</SubType>
@@ -124,6 +131,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmCreateAccount.resx">
       <DependentUpon>frmCreateAccount.cs</DependentUpon>
     </EmbeddedResource>

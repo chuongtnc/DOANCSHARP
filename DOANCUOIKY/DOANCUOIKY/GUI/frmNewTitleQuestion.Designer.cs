@@ -44,6 +44,10 @@
             this.edtNameSearch = new DevExpress.XtraEditors.TextEdit();
             this.edtNoSearch = new DevExpress.XtraEditors.TextEdit();
             this.gvTitle = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbCategorySearch = new System.Windows.Forms.ComboBox();
             this.gbTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.edtName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtNo.Properties)).BeginInit();
@@ -55,6 +59,8 @@
             // 
             // gbTitle
             // 
+            this.gbTitle.Controls.Add(this.label5);
+            this.gbTitle.Controls.Add(this.cbCategory);
             this.gbTitle.Controls.Add(this.btSave);
             this.gbTitle.Controls.Add(this.btRemove);
             this.gbTitle.Controls.Add(this.btEdit);
@@ -144,6 +150,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbCategorySearch);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btFind);
@@ -160,7 +168,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(286, 37);
+            this.label4.Location = new System.Drawing.Point(189, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 8;
@@ -187,16 +195,16 @@
             // 
             // edtNameSearch
             // 
-            this.edtNameSearch.Location = new System.Drawing.Point(327, 34);
+            this.edtNameSearch.Location = new System.Drawing.Point(230, 35);
             this.edtNameSearch.Name = "edtNameSearch";
-            this.edtNameSearch.Size = new System.Drawing.Size(100, 20);
+            this.edtNameSearch.Size = new System.Drawing.Size(233, 20);
             this.edtNameSearch.TabIndex = 2;
             // 
             // edtNoSearch
             // 
             this.edtNoSearch.Location = new System.Drawing.Point(50, 34);
             this.edtNoSearch.Name = "edtNoSearch";
-            this.edtNoSearch.Size = new System.Drawing.Size(212, 20);
+            this.edtNoSearch.Size = new System.Drawing.Size(118, 20);
             this.edtNoSearch.TabIndex = 1;
             // 
             // gvTitle
@@ -210,6 +218,40 @@
             this.gvTitle.Size = new System.Drawing.Size(817, 274);
             this.gvTitle.TabIndex = 0;
             this.gvTitle.Click += new System.EventHandler(this.gvTitle_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(47, 105);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Loại";
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(97, 102);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(212, 21);
+            this.cbCategory.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(482, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Loại";
+            // 
+            // cbCategorySearch
+            // 
+            this.cbCategorySearch.FormattingEnabled = true;
+            this.cbCategorySearch.Location = new System.Drawing.Point(515, 34);
+            this.cbCategorySearch.Name = "cbCategorySearch";
+            this.cbCategorySearch.Size = new System.Drawing.Size(197, 21);
+            this.cbCategorySearch.TabIndex = 14;
             // 
             // frmNewTitleQuestion
             // 
@@ -251,5 +293,9 @@
         private System.Windows.Forms.Button btFind;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbCategorySearch;
     }
 }

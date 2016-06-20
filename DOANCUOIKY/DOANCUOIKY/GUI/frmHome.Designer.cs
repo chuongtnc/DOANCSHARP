@@ -47,6 +47,7 @@
             this.lbNAME1 = new System.Windows.Forms.Label();
             this.lbPOSITION = new System.Windows.Forms.Label();
             this.lbPOSITION1 = new System.Windows.Forms.Label();
+            this.menuCATEGORY = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +68,7 @@
             // menuTEACHER
             // 
             this.menuTEACHER.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuCATEGORY,
             this.menuTITLE_QUESTION,
             this.NEW_QUESTION,
             this.HICTORY_EXAM});
@@ -208,6 +210,13 @@
             this.lbPOSITION1.Text = "Chức vụ  ";
             this.lbPOSITION1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menuCATEGORY
+            // 
+            this.menuCATEGORY.Name = "menuCATEGORY";
+            this.menuCATEGORY.Size = new System.Drawing.Size(156, 22);
+            this.menuCATEGORY.Text = "Loại Mã đề";
+            this.menuCATEGORY.Click += new System.EventHandler(this.menuCATEGORY_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,5 +261,6 @@
         private System.Windows.Forms.Label lbPOSITION1;
         private System.Windows.Forms.ToolStripMenuItem menuLOGOUT;
         private System.Windows.Forms.ToolStripMenuItem menuTITLE_QUESTION;
+        private System.Windows.Forms.ToolStripMenuItem menuCATEGORY;
     }
 }

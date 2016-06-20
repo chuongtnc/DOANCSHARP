@@ -68,15 +68,16 @@ namespace WcfService1
             return false;
         }
 
-        public Boolean AddTitle(string titleNo, string titleName)
+        public Boolean AddTitle(string titleNo, string titleName, int titleCategory)
         {
             if (!ValidateIfExistNo(titleNo))
             {
                 con.Open();
 
-                cmd = new SqlCommand("INSERT INTO TITLE (NO,NAME) VALUES(@titleNo, @titleName)", con);
+                cmd = new SqlCommand("INSERT INTO TITLE (NO,NAME,CATEGORY_ID) VALUES(@titleNo, @titleName, @titleCategory)", con);
                 cmd.Parameters.AddWithValue("@titleNo", titleNo);
                 cmd.Parameters.AddWithValue("@titleName", titleName);
+                cmd.Parameters.AddWithValue("@titleCategory", titleCategory);
 
                 cmd.ExecuteNonQuery();
 
@@ -98,13 +99,14 @@ namespace WcfService1
             return dt;
         }
 
-        public DataTable LoadDataTitleByParemeters(string titleNo, string titleName)
+        public DataTable LoadDataTitleByParemeters(string titleNo, string titleName, int titleCategory)
         {
             con.Open();
 
-            cmd = new SqlCommand("SELECT * FROM TITLE WHERE NO LIKE '%'+ @titleNo +'%' AND NAME LIKE '%'+ @titleName +'%'", con);
+            cmd = new SqlCommand("SELECT * FROM TITLE WHERE NO LIKE '%'+ @titleNo +'%' AND NAME LIKE '%'+ @titleName +'%' AND CATEGORY_ID = @titleCategory", con);
             cmd.Parameters.AddWithValue("@titleNo", titleNo);
             cmd.Parameters.AddWithValue("@titleName", titleName);
+            cmd.Parameters.AddWithValue("@titleCategory", titleCategory);
 
             da = new SqlDataAdapter(cmd);
             var dt = new DataTable("DataTitle");
@@ -114,16 +116,67 @@ namespace WcfService1
             return dt;
         }
 
-        public Boolean UpdateTitle(string titleID, string titleNo, string titleName)
+        public Boolean UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory)
         {
-            if (!ValidateIfExistNo(titleNo))
+                con.Open();
+
+                cmd = new SqlCommand("UPDATE TITLE SET NAME = @titleName, CATEGORY_ID = @titleCategory WHERE ID = @titleID", con);
+                cmd.Parameters.AddWithValue("@titleName", titleName);
+                cmd.Parameters.AddWithValue("@titleID", titleID);
+                cmd.Parameters.AddWithValue("@titleCategory", titleCategory);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                return true;
+
+        }
+
+
+        public Boolean DeleteTitle(string titleID)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("DELETE FROM TITLE WHERE ID = @titleID", con);
+            cmd.Parameters.AddWithValue("@titleID", titleID);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            return true;
+        }
+        //----------------------
+
+
+
+        //Các hàm dành cho Category
+        public Boolean ValidateIfExistCategoryNo(string categoryNo)
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT NO FROM CATEGORY WHERE NO=@categoryNo", con);
+            cmd.Parameters.AddWithValue("@categoryNo", categoryNo);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                con.Close();
+                return true;
+            }
+
+            con.Close();
+            return false;
+        }
+
+        public Boolean AddCategory(string categoryNo, string categoryName)
+        {
+            if (!ValidateIfExistCategoryNo(categoryNo))
             {
                 con.Open();
 
-                cmd = new SqlCommand("UPDATE TITLE SET NO = @titleNo, NAME = @titleName WHERE ID = @titleID", con);
-                cmd.Parameters.AddWithValue("@titleNo", titleNo);
-                cmd.Parameters.AddWithValue("@titleName", titleName);
-                cmd.Parameters.AddWithValue("@titleID", titleID);
+                cmd = new SqlCommand("INSERT INTO CATEGORY (NO,NAME) VALUES(@categoryNo, @categoryName)", con);
+                cmd.Parameters.AddWithValue("@categoryNo", categoryNo);
+                cmd.Parameters.AddWithValue("@categoryName", categoryName);
 
                 cmd.ExecuteNonQuery();
 
@@ -136,13 +189,54 @@ namespace WcfService1
 
         }
 
+        public DataTable LoadDataCategory()
+        {
 
-        public Boolean DeleteTitle(string titleID)
+            da = new SqlDataAdapter("SELECT * FROM CATEGORY", con);
+            var dt = new DataTable("DataCategory");
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable LoadDataCategoryByParemeters(string categoryNo, string categoryName)
         {
             con.Open();
 
-            cmd = new SqlCommand("DELETE FROM TITLE WHERE ID = @titleID", con);
-            cmd.Parameters.AddWithValue("@titleID", titleID);
+            cmd = new SqlCommand("SELECT * FROM category WHERE NO LIKE '%'+ @categoryNo +'%' AND NAME LIKE '%'+ @categoryName +'%'", con);
+            cmd.Parameters.AddWithValue("@categoryNo", categoryNo);
+            cmd.Parameters.AddWithValue("@categoryName", categoryName);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataCategory");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        public Boolean UpdateCategory(string categoryID, string categoryNo, string categoryName)
+        {
+
+                con.Open();
+
+                cmd = new SqlCommand("UPDATE CATEGORY SET NAME = @categoryName WHERE ID = @categoryID", con);
+                cmd.Parameters.AddWithValue("@categoryName", categoryName);
+                cmd.Parameters.AddWithValue("@categoryID", categoryID);
+
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+                return true;
+
+        }
+
+
+        public Boolean DeleteCategory(string categoryID)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("DELETE FROM CATEGORY WHERE ID = @categoryID", con);
+            cmd.Parameters.AddWithValue("@categoryID", categoryID);
 
             cmd.ExecuteNonQuery();
 

@@ -175,19 +175,34 @@ namespace DOANCUOIKY.WCF {
         string[] LoginUserDetails(DOANCUOIKY.WCF.UserInfoToValidate userInfoToValidate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddTitle", ReplyAction="http://tempuri.org/IService1/AddTitleResponse")]
-        bool AddTitle(string titleNo, string titleName);
+        bool AddTitle(string titleNo, string titleName, int titleCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadDataTitle", ReplyAction="http://tempuri.org/IService1/LoadDataTitleResponse")]
         System.Data.DataTable LoadDataTitle();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadDataTitleByParemeters", ReplyAction="http://tempuri.org/IService1/LoadDataTitleByParemetersResponse")]
-        System.Data.DataTable LoadDataTitleByParemeters(string titleNo, string titleName);
+        System.Data.DataTable LoadDataTitleByParemeters(string titleNo, string titleName, int titleCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateTitle", ReplyAction="http://tempuri.org/IService1/UpdateTitleResponse")]
-        bool UpdateTitle(string titleID, string titleNo, string titleName);
+        bool UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteTitle", ReplyAction="http://tempuri.org/IService1/DeleteTitleResponse")]
         bool DeleteTitle(string titleID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddCategory", ReplyAction="http://tempuri.org/IService1/AddCategoryResponse")]
+        bool AddCategory(string categoryNo, string categoryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadDataCategory", ReplyAction="http://tempuri.org/IService1/LoadDataCategoryResponse")]
+        System.Data.DataTable LoadDataCategory();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadDataCategoryByParemeters", ReplyAction="http://tempuri.org/IService1/LoadDataCategoryByParemetersResponse")]
+        System.Data.DataTable LoadDataCategoryByParemeters(string categoryNo, string categoryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCategory", ReplyAction="http://tempuri.org/IService1/UpdateCategoryResponse")]
+        bool UpdateCategory(string categoryID, string categoryNo, string categoryName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCategory", ReplyAction="http://tempuri.org/IService1/DeleteCategoryResponse")]
+        bool DeleteCategory(string categoryID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCreateAccount", ReplyAction="http://tempuri.org/IService1/InsertCreateAccountResponse")]
         int InsertCreateAccount(DOANCUOIKY.WCF.CreateAccount c);
@@ -224,24 +239,44 @@ namespace DOANCUOIKY.WCF {
             return base.Channel.LoginUserDetails(userInfoToValidate);
         }
         
-        public bool AddTitle(string titleNo, string titleName) {
-            return base.Channel.AddTitle(titleNo, titleName);
+        public bool AddTitle(string titleNo, string titleName, int titleCategory) {
+            return base.Channel.AddTitle(titleNo, titleName, titleCategory);
         }
         
         public System.Data.DataTable LoadDataTitle() {
             return base.Channel.LoadDataTitle();
         }
         
-        public System.Data.DataTable LoadDataTitleByParemeters(string titleNo, string titleName) {
-            return base.Channel.LoadDataTitleByParemeters(titleNo, titleName);
+        public System.Data.DataTable LoadDataTitleByParemeters(string titleNo, string titleName, int titleCategory) {
+            return base.Channel.LoadDataTitleByParemeters(titleNo, titleName, titleCategory);
         }
         
-        public bool UpdateTitle(string titleID, string titleNo, string titleName) {
-            return base.Channel.UpdateTitle(titleID, titleNo, titleName);
+        public bool UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory) {
+            return base.Channel.UpdateTitle(titleID, titleNo, titleName, titleCategory);
         }
         
         public bool DeleteTitle(string titleID) {
             return base.Channel.DeleteTitle(titleID);
+        }
+        
+        public bool AddCategory(string categoryNo, string categoryName) {
+            return base.Channel.AddCategory(categoryNo, categoryName);
+        }
+        
+        public System.Data.DataTable LoadDataCategory() {
+            return base.Channel.LoadDataCategory();
+        }
+        
+        public System.Data.DataTable LoadDataCategoryByParemeters(string categoryNo, string categoryName) {
+            return base.Channel.LoadDataCategoryByParemeters(categoryNo, categoryName);
+        }
+        
+        public bool UpdateCategory(string categoryID, string categoryNo, string categoryName) {
+            return base.Channel.UpdateCategory(categoryID, categoryNo, categoryName);
+        }
+        
+        public bool DeleteCategory(string categoryID) {
+            return base.Channel.DeleteCategory(categoryID);
         }
         
         public int InsertCreateAccount(DOANCUOIKY.WCF.CreateAccount c) {

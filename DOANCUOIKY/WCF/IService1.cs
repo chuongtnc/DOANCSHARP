@@ -18,19 +18,37 @@ namespace WcfService1
 
         //Dành cho mã đề
         [OperationContract]
-        Boolean AddTitle(string titleNo, string titleName);
+        Boolean AddTitle(string titleNo, string titleName, int titleCategory);
 
         [OperationContract]
         DataTable LoadDataTitle();
 
         [OperationContract]
-        DataTable LoadDataTitleByParemeters(string titleNo, string titleName);
+        DataTable LoadDataTitleByParemeters(string titleNo, string titleName, int titleCategory);
 
         [OperationContract]
-        Boolean UpdateTitle(string titleID, string titleNo, string titleName);
+        Boolean UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory);
 
         [OperationContract]
         Boolean DeleteTitle(string titleID);
+        //--------------
+
+
+        //Dành cho loại mã đề
+        [OperationContract]
+        Boolean AddCategory(string categoryNo, string categoryName);
+
+        [OperationContract]
+        DataTable LoadDataCategory();
+
+        [OperationContract]
+        DataTable LoadDataCategoryByParemeters(string categoryNo, string categoryName);
+
+        [OperationContract]
+        Boolean UpdateCategory(string categoryID, string categoryNo, string categoryName);
+
+        [OperationContract]
+        Boolean DeleteCategory(string categoryID);
         //--------------
 
         [OperationContract]
