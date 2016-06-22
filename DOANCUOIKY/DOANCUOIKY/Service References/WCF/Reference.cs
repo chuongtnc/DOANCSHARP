@@ -204,6 +204,21 @@ namespace DOANCUOIKY.WCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteCategory", ReplyAction="http://tempuri.org/IService1/DeleteCategoryResponse")]
         bool DeleteCategory(string categoryID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddQuestion", ReplyAction="http://tempuri.org/IService1/AddQuestionResponse")]
+        bool AddQuestion(int titleID, string questionNo, string question, string A, string B, string C, string D, string answer, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadDataQuestion", ReplyAction="http://tempuri.org/IService1/LoadDataQuestionResponse")]
+        System.Data.DataTable LoadDataQuestion();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadDataQuestionByParemeters", ReplyAction="http://tempuri.org/IService1/LoadDataQuestionByParemetersResponse")]
+        System.Data.DataTable LoadDataQuestionByParemeters(int titleID, string questionNo, string question, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateQuestion", ReplyAction="http://tempuri.org/IService1/UpdateQuestionResponse")]
+        bool UpdateQuestion(int questionID, int titleID, string question, string A, string B, string C, string D, string answer, string status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteQuestion", ReplyAction="http://tempuri.org/IService1/DeleteQuestionResponse")]
+        bool DeleteQuestion(string questionID);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCreateAccount", ReplyAction="http://tempuri.org/IService1/InsertCreateAccountResponse")]
         int InsertCreateAccount(DOANCUOIKY.WCF.CreateAccount c);
     }
@@ -277,6 +292,26 @@ namespace DOANCUOIKY.WCF {
         
         public bool DeleteCategory(string categoryID) {
             return base.Channel.DeleteCategory(categoryID);
+        }
+        
+        public bool AddQuestion(int titleID, string questionNo, string question, string A, string B, string C, string D, string answer, string status) {
+            return base.Channel.AddQuestion(titleID, questionNo, question, A, B, C, D, answer, status);
+        }
+        
+        public System.Data.DataTable LoadDataQuestion() {
+            return base.Channel.LoadDataQuestion();
+        }
+        
+        public System.Data.DataTable LoadDataQuestionByParemeters(int titleID, string questionNo, string question, string status) {
+            return base.Channel.LoadDataQuestionByParemeters(titleID, questionNo, question, status);
+        }
+        
+        public bool UpdateQuestion(int questionID, int titleID, string question, string A, string B, string C, string D, string answer, string status) {
+            return base.Channel.UpdateQuestion(questionID, titleID, question, A, B, C, D, answer, status);
+        }
+        
+        public bool DeleteQuestion(string questionID) {
+            return base.Channel.DeleteQuestion(questionID);
         }
         
         public int InsertCreateAccount(DOANCUOIKY.WCF.CreateAccount c) {

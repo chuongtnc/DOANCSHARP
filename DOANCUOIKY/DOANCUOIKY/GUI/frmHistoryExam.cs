@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace DOANCUOIKY.GUI
 {
-    public partial class frmHictoryExam : Form
+    public partial class frmHistoryExam : Form
     {
-        public frmHictoryExam()
+        public frmHistoryExam()
         {
             InitializeComponent();
         }

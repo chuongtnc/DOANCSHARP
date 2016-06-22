@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="BLL\CategoryBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\QuestionBLL.cs" />
     <Compile Include="BLL\TitleBLL.cs" />
     <Compile Include="DTO\UserInfoHolder.cs" />
     <Compile Include="GUI\frmAbout.cs">
@@ -88,11 +89,11 @@
     <Compile Include="GUI\frmExamTest.Designer.cs">
       <DependentUpon>frmExamTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmHictoryExam.cs">
+    <Compile Include="GUI\frmHistoryExam.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmHictoryExam.Designer.cs">
-      <DependentUpon>frmHictoryExam.cs</DependentUpon>
+    <Compile Include="GUI\frmHistoryExam.Designer.cs">
+      <DependentUpon>frmHistoryExam.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmHistoryExamStudent.cs">
       <SubType>Form</SubType>
@@ -142,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmNewQuestion.resx">
+      <DependentUpon>frmNewQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmNewTitleQuestion.resx">
       <DependentUpon>frmNewTitleQuestion.cs</DependentUpon>

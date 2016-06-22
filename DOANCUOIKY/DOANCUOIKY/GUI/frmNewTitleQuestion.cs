@@ -47,6 +47,7 @@ namespace DOANCUOIKY.GUI
                 if (check == true)
                 {
                     MessageBox.Show("Thêm thành công !!!");
+                    openFunctionAdd();
                     LoadDataTitle();
                 }
                 else

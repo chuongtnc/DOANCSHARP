@@ -30,12 +30,10 @@
         {
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.edtUsername = new DevExpress.XtraEditors.TextEdit();
-            this.edtPassword = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.edtUsername.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edtPassword.Properties)).BeginInit();
+            this.edtUsername = new System.Windows.Forms.TextBox();
+            this.edtPassword = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -58,20 +56,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // edtUsername
-            // 
-            this.edtUsername.Location = new System.Drawing.Point(94, 86);
-            this.edtUsername.Name = "edtUsername";
-            this.edtUsername.Size = new System.Drawing.Size(100, 20);
-            this.edtUsername.TabIndex = 2;
-            // 
-            // edtPassword
-            // 
-            this.edtPassword.Location = new System.Drawing.Point(94, 112);
-            this.edtPassword.Name = "edtPassword";
-            this.edtPassword.Size = new System.Drawing.Size(100, 20);
-            this.edtPassword.TabIndex = 3;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -90,21 +74,33 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 
+            // edtUsername
+            // 
+            this.edtUsername.Location = new System.Drawing.Point(94, 89);
+            this.edtUsername.Name = "edtUsername";
+            this.edtUsername.Size = new System.Drawing.Size(146, 20);
+            this.edtUsername.TabIndex = 6;
+            // 
+            // edtPassword
+            // 
+            this.edtPassword.Location = new System.Drawing.Point(94, 112);
+            this.edtPassword.Name = "edtPassword";
+            this.edtPassword.Size = new System.Drawing.Size(146, 20);
+            this.edtPassword.TabIndex = 7;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.edtPassword);
             this.Controls.Add(this.edtUsername);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
-            ((System.ComponentModel.ISupportInitialize)(this.edtUsername.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edtPassword.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,9 +110,9 @@
 
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private DevExpress.XtraEditors.TextEdit edtUsername;
-        private DevExpress.XtraEditors.TextEdit edtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox edtUsername;
+        private System.Windows.Forms.TextBox edtPassword;
     }
 }

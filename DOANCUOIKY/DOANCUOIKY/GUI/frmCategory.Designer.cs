@@ -32,8 +32,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btFind = new System.Windows.Forms.Button();
-            this.edtNameSearch = new DevExpress.XtraEditors.TextEdit();
-            this.edtNoSearch = new DevExpress.XtraEditors.TextEdit();
             this.gvCategory = new System.Windows.Forms.DataGridView();
             this.gbCategory = new System.Windows.Forms.GroupBox();
             this.btSave = new System.Windows.Forms.Button();
@@ -42,24 +40,22 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.edtName = new DevExpress.XtraEditors.TextEdit();
-            this.edtNo = new DevExpress.XtraEditors.TextEdit();
+            this.edtNo = new System.Windows.Forms.TextBox();
+            this.edtName = new System.Windows.Forms.TextBox();
+            this.edtNoSearch = new System.Windows.Forms.TextBox();
+            this.edtNameSearch = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edtNameSearch.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edtNoSearch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCategory)).BeginInit();
             this.gbCategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edtName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edtNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.edtNameSearch);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.edtNoSearch);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btFind);
-            this.groupBox1.Controls.Add(this.edtNameSearch);
-            this.groupBox1.Controls.Add(this.edtNoSearch);
             this.groupBox1.Controls.Add(this.gvCategory);
             this.groupBox1.Location = new System.Drawing.Point(14, 193);
             this.groupBox1.Name = "groupBox1";
@@ -96,20 +92,6 @@
             this.btFind.UseVisualStyleBackColor = true;
             this.btFind.Click += new System.EventHandler(this.btFind_Click);
             // 
-            // edtNameSearch
-            // 
-            this.edtNameSearch.Location = new System.Drawing.Point(327, 34);
-            this.edtNameSearch.Name = "edtNameSearch";
-            this.edtNameSearch.Size = new System.Drawing.Size(100, 20);
-            this.edtNameSearch.TabIndex = 2;
-            // 
-            // edtNoSearch
-            // 
-            this.edtNoSearch.Location = new System.Drawing.Point(50, 34);
-            this.edtNoSearch.Name = "edtNoSearch";
-            this.edtNoSearch.Size = new System.Drawing.Size(212, 20);
-            this.edtNoSearch.TabIndex = 1;
-            // 
             // gvCategory
             // 
             this.gvCategory.AllowUserToAddRows = false;
@@ -124,14 +106,14 @@
             // 
             // gbCategory
             // 
+            this.gbCategory.Controls.Add(this.edtName);
+            this.gbCategory.Controls.Add(this.edtNo);
             this.gbCategory.Controls.Add(this.btSave);
             this.gbCategory.Controls.Add(this.btRemove);
             this.gbCategory.Controls.Add(this.btEdit);
             this.gbCategory.Controls.Add(this.btAdd);
             this.gbCategory.Controls.Add(this.label2);
             this.gbCategory.Controls.Add(this.label1);
-            this.gbCategory.Controls.Add(this.edtName);
-            this.gbCategory.Controls.Add(this.edtNo);
             this.gbCategory.Location = new System.Drawing.Point(14, 25);
             this.gbCategory.Name = "gbCategory";
             this.gbCategory.Size = new System.Drawing.Size(829, 162);
@@ -197,19 +179,33 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "No";
             // 
-            // edtName
-            // 
-            this.edtName.Location = new System.Drawing.Point(97, 67);
-            this.edtName.Name = "edtName";
-            this.edtName.Size = new System.Drawing.Size(212, 20);
-            this.edtName.TabIndex = 1;
-            // 
             // edtNo
             // 
-            this.edtNo.Location = new System.Drawing.Point(97, 32);
+            this.edtNo.Location = new System.Drawing.Point(102, 32);
             this.edtNo.Name = "edtNo";
-            this.edtNo.Size = new System.Drawing.Size(212, 20);
-            this.edtNo.TabIndex = 0;
+            this.edtNo.Size = new System.Drawing.Size(100, 20);
+            this.edtNo.TabIndex = 8;
+            // 
+            // edtName
+            // 
+            this.edtName.Location = new System.Drawing.Point(102, 63);
+            this.edtName.Name = "edtName";
+            this.edtName.Size = new System.Drawing.Size(100, 20);
+            this.edtName.TabIndex = 9;
+            // 
+            // edtNoSearch
+            // 
+            this.edtNoSearch.Location = new System.Drawing.Point(50, 34);
+            this.edtNoSearch.Name = "edtNoSearch";
+            this.edtNoSearch.Size = new System.Drawing.Size(230, 20);
+            this.edtNoSearch.TabIndex = 10;
+            // 
+            // edtNameSearch
+            // 
+            this.edtNameSearch.Location = new System.Drawing.Point(327, 34);
+            this.edtNameSearch.Name = "edtNameSearch";
+            this.edtNameSearch.Size = new System.Drawing.Size(292, 20);
+            this.edtNameSearch.TabIndex = 11;
             // 
             // frmCategory
             // 
@@ -222,13 +218,9 @@
             this.Text = "frmCategory";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edtNameSearch.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edtNoSearch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvCategory)).EndInit();
             this.gbCategory.ResumeLayout(false);
             this.gbCategory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edtName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edtNo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,8 +231,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btFind;
-        private DevExpress.XtraEditors.TextEdit edtNameSearch;
-        private DevExpress.XtraEditors.TextEdit edtNoSearch;
         private System.Windows.Forms.DataGridView gvCategory;
         private System.Windows.Forms.GroupBox gbCategory;
         private System.Windows.Forms.Button btSave;
@@ -249,8 +239,10 @@
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit edtName;
-        private DevExpress.XtraEditors.TextEdit edtNo;
+        private System.Windows.Forms.TextBox edtName;
+        private System.Windows.Forms.TextBox edtNo;
+        private System.Windows.Forms.TextBox edtNameSearch;
+        private System.Windows.Forms.TextBox edtNoSearch;
 
     }
 }

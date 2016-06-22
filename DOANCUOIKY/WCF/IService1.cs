@@ -34,7 +34,7 @@ namespace WcfService1
         //--------------
 
 
-        //Dành cho loại mã đề
+        //Dành cho loại Category
         [OperationContract]
         Boolean AddCategory(string categoryNo, string categoryName);
 
@@ -49,6 +49,23 @@ namespace WcfService1
 
         [OperationContract]
         Boolean DeleteCategory(string categoryID);
+        //--------------
+
+        //Dành cho câu hỏi
+        [OperationContract]
+        Boolean AddQuestion(int titleID, string questionNo, string question, string A, string B, string C, string D, string answer, string status);
+
+        [OperationContract]
+        DataTable LoadDataQuestion();
+
+        [OperationContract]
+        DataTable LoadDataQuestionByParemeters(int titleID, string questionNo, string question, string status);
+
+        [OperationContract]
+        Boolean UpdateQuestion(int questionID, int titleID, string question, string A, string B, string C, string D, string answer, string status);
+
+        [OperationContract]
+        Boolean DeleteQuestion(string questionID);
         //--------------
 
         [OperationContract]

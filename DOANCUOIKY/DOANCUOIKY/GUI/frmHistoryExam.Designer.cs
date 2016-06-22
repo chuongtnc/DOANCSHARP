@@ -1,6 +1,6 @@
 ﻿namespace DOANCUOIKY.GUI
 {
-    partial class frmHictoryExam
+    partial class frmHistoryExam
     {
         /// <summary>
         /// Required designer variable.

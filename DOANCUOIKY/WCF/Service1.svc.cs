@@ -245,6 +245,121 @@ namespace WcfService1
         }
         //----------------------
 
+
+        //Các hàm dành cho Question
+        public Boolean ValidateIfQuestionExistNo(string questionNo)
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT NO FROM QUESTION WHERE NO=@questionNo", con);
+            cmd.Parameters.AddWithValue("@questionNo", questionNo);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.HasRows)
+            {
+                con.Close();
+                return true;
+            }
+
+            con.Close();
+            return false;
+        }
+
+        public Boolean AddQuestion(int titleID, string questionNo, string question, string A, string B, string C, string D, string answer, string status)
+        {
+            if (!ValidateIfQuestionExistNo(questionNo))
+                {
+                    con.Open();
+
+                    cmd = new SqlCommand("INSERT INTO QUESTION (TITLE_ID,NO ,QUESTION,A,B,C,D,ANSWER,STATUS,DATE) VALUES(@titleID, @questionNo, @question, @A, @B, @C ,@D, @answer, @status, GETDATE())", con);
+                    cmd.Parameters.AddWithValue("@titleID", titleID);
+                    cmd.Parameters.AddWithValue("@questionNo", questionNo);
+                    cmd.Parameters.AddWithValue("@question", question);
+                    cmd.Parameters.AddWithValue("@A", A);
+                    cmd.Parameters.AddWithValue("@B", B);
+                    cmd.Parameters.AddWithValue("@C", C);
+                    cmd.Parameters.AddWithValue("@D", D);
+                    cmd.Parameters.AddWithValue("@answer", answer);
+                    cmd.Parameters.AddWithValue("@status", status);
+
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+                    return true;
+
+                }
+
+                con.Close();
+                return false;
+        }
+
+        public DataTable LoadDataQuestion()
+        {
+
+            da = new SqlDataAdapter("SELECT * FROM QUESTION", con);
+            var dt = new DataTable("DataQuestion");
+            da.Fill(dt);
+            return dt;
+        }
+
+        public DataTable LoadDataQuestionByParemeters(int titleID,string questionNo, string question, string status)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("SELECT * FROM QUESTION WHERE TITLE_ID LIKE '%'+ @titleID +'%' AND NO LIKE '%'+ @questionNo +'%' AND QUESTION LIKE '%'+ @question +'%'  AND STATUS LIKE '%'+ @status +'%'", con);
+            cmd.Parameters.AddWithValue("@titleID", titleID.ToString());
+            cmd.Parameters.AddWithValue("@questionNo", questionNo);
+            cmd.Parameters.AddWithValue("@question", question);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataQuestion");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        public Boolean UpdateQuestion(int questionID , int titleID, string question, string A, string B, string C, string D, string answer, string status)
+        {
+
+            con.Open();
+
+            cmd = new SqlCommand("UPDATE QUESTION SET TITLE_ID = @titleID, QUESTION = @question, A = @A, B = @B, C = @C, D = @D, ANSWER = @answer, STATUS = @status WHERE ID = @questionID", con);
+            cmd.Parameters.AddWithValue("@questionID", questionID);
+            cmd.Parameters.AddWithValue("@titleID", titleID);
+            cmd.Parameters.AddWithValue("@question", question);
+            cmd.Parameters.AddWithValue("@A", A);
+            cmd.Parameters.AddWithValue("@B", B);
+            cmd.Parameters.AddWithValue("@C", C);
+            cmd.Parameters.AddWithValue("@D", D);
+            cmd.Parameters.AddWithValue("@answer", answer);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            return true;
+
+        }
+
+
+        public Boolean DeleteQuestion(string questionID)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("DELETE FROM QUESTION WHERE ID = @questionID", con);
+            cmd.Parameters.AddWithValue("@questionID", questionID);
+
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            return true;
+        }
+        //----------------------
+
+
+
         public int InsertCreateAccount(CreateAccount c)
         {
             try

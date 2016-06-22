@@ -52,8 +52,8 @@ namespace DOANCUOIKY.GUI
 
         private void HICTORY_EXAM_Click(object sender, EventArgs e)
         {
-            frmHictoryExam frmHictoryExam = new frmHictoryExam();
-            frmHictoryExam.ShowDialog();
+            frmHistoryExam frmHistoryExam = new frmHistoryExam();
+            frmHistoryExam.ShowDialog();
         }
 
         private void menuTITLE_QUESTION_Click(object sender, EventArgs e)
