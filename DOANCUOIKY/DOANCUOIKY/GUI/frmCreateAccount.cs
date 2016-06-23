@@ -37,22 +37,15 @@ namespace DOANCUOIKY.GUI
             }
             else
             {
+                Service1Client service = new Service1Client();
+
                 CreateAccount c = new CreateAccount();
                 c.UserName = txtUserName.Text;
                 c.Password = txtPassword.Text;
                 c.Mssv = Int32.Parse(txtMssv.Text);
                 c.HovaTen = txtHovaTen.Text;
-
-                Service1Client service = new Service1Client();
-
-                if (service.InsertCreateAccount(c) == 1)
-                {
-                    MessageBox.Show("Account successfully created ");
-                }
-                else
-                {
-                    MessageBox.Show("something wrong ");
-                }
+                string result = service.InsertCreateAccount(c);
+                MessageBox.Show(result);
             }
         }
         

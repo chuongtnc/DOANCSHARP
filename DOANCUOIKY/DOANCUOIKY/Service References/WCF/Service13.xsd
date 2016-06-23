@@ -332,7 +332,7 @@
   <xs:element name="InsertCreateAccountResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="InsertCreateAccountResult" type="xs:int" />
+        <xs:element minOccurs="0" name="InsertCreateAccountResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
