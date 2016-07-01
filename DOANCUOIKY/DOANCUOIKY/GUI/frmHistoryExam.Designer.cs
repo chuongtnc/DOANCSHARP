@@ -40,8 +40,6 @@
             this.gvListExam = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.gvListQuestion = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvListStudent)).BeginInit();
@@ -60,7 +58,7 @@
             this.groupBox1.Controls.Add(this.btFind);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(936, 52);
+            this.groupBox1.Size = new System.Drawing.Size(596, 52);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
@@ -112,7 +110,7 @@
             this.groupBox2.Controls.Add(this.gvListStudent);
             this.groupBox2.Location = new System.Drawing.Point(12, 70);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(282, 465);
+            this.groupBox2.Size = new System.Drawing.Size(596, 175);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách sinh viên";
@@ -120,76 +118,59 @@
             // gvListStudent
             // 
             this.gvListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListStudent.Location = new System.Drawing.Point(6, 19);
+            this.gvListStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvListStudent.Location = new System.Drawing.Point(3, 16);
             this.gvListStudent.Name = "gvListStudent";
-            this.gvListStudent.Size = new System.Drawing.Size(264, 440);
+            this.gvListStudent.Size = new System.Drawing.Size(590, 156);
             this.gvListStudent.TabIndex = 0;
             this.gvListStudent.Click += new System.EventHandler(this.gvListStudent_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.gvListExam);
-            this.groupBox3.Location = new System.Drawing.Point(334, 70);
+            this.groupBox3.Location = new System.Drawing.Point(12, 251);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(295, 465);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.Size = new System.Drawing.Size(593, 160);
+            this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách Thi";
             // 
             // gvListExam
             // 
             this.gvListExam.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListExam.Location = new System.Drawing.Point(6, 19);
+            this.gvListExam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvListExam.Location = new System.Drawing.Point(3, 16);
             this.gvListExam.Name = "gvListExam";
-            this.gvListExam.Size = new System.Drawing.Size(276, 440);
+            this.gvListExam.Size = new System.Drawing.Size(587, 141);
             this.gvListExam.TabIndex = 1;
             this.gvListExam.Click += new System.EventHandler(this.gvListExam_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.gvListQuestion);
-            this.groupBox4.Location = new System.Drawing.Point(668, 70);
+            this.groupBox4.Location = new System.Drawing.Point(12, 417);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(280, 465);
-            this.groupBox4.TabIndex = 2;
+            this.groupBox4.Size = new System.Drawing.Size(596, 153);
+            this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách câu hỏi";
             // 
             // gvListQuestion
             // 
             this.gvListQuestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvListQuestion.Location = new System.Drawing.Point(6, 19);
+            this.gvListQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvListQuestion.Location = new System.Drawing.Point(3, 16);
             this.gvListQuestion.Name = "gvListQuestion";
-            this.gvListQuestion.Size = new System.Drawing.Size(264, 440);
+            this.gvListQuestion.Size = new System.Drawing.Size(590, 134);
             this.gvListQuestion.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(288, 281);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "----------->";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(622, 281);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "----------->";
             // 
             // frmHistoryExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 591);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox3);
+            this.ClientSize = new System.Drawing.Size(625, 597);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmHistoryExam";
@@ -203,7 +184,6 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvListQuestion)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -216,12 +196,10 @@
         private System.Windows.Forms.TextBox tbStudentName;
         private System.Windows.Forms.TextBox tbStudentNo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView gvListStudent;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView gvListExam;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView gvListQuestion;
     }
 }

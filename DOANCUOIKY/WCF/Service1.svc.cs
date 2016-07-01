@@ -368,7 +368,7 @@ namespace WcfService1
         {
             con.Open();
 
-            cmd = new SqlCommand("SELECT ID,NO,NAME FROM ACCOUNT WHERE NO LIKE '%'+ @studentNo +'%' AND NAME LIKE '%'+ @studentName +'%' AND POSITION <> 'ADMIN'", con);
+            cmd = new SqlCommand("SELECT ID,NO AS 'Mã số sinh viên',NAME AS 'Tên sinh viên' FROM ACCOUNT WHERE NO LIKE '%'+ @studentNo +'%' AND NAME LIKE '%'+ @studentName +'%' AND POSITION <> 'ADMIN'", con);
             cmd.Parameters.AddWithValue("@studentNo", studentNo);
             cmd.Parameters.AddWithValue("@studentName", studentName);
 
@@ -384,7 +384,7 @@ namespace WcfService1
         {
             con.Open();
 
-            cmd = new SqlCommand("SELECT ID,DATE,TOTAL_QUESTION,TOTAL_TRUE_ANSWER,SCORE FROM EXAM_HEADER WHERE ACCOUNT_ID = @studentID ", con);
+            cmd = new SqlCommand("SELECT ID,DATE AS 'Ngày thi',TOTAL_QUESTION AS 'Tổng số câu hỏi đã thi',TOTAL_TRUE_ANSWER AS 'Tổng số câu trả lời đúng',SCORE AS 'Điểm' FROM EXAM_HEADER WHERE ACCOUNT_ID = @studentID ", con);
             cmd.Parameters.AddWithValue("@studentID", studentID);
 
             da = new SqlDataAdapter(cmd);
@@ -399,7 +399,21 @@ namespace WcfService1
         {
             con.Open();
 
-            cmd = new SqlCommand("SELECT ID,QUESTION_ID,ANSWER FROM EXAM_LINE WHERE EXAM_HEADER_ID = @examHeaderID ", con);
+            cmd = new SqlCommand(@"SELECT QUESTION.QUESTION AS 'Câu hỏi',QUESTION.A,QUESTION.B,QUESTION.C,QUESTION.D,
+                                    CASE QUESTION.ANSWER
+                                        WHEN 0 THEN 'A'
+                                        WHEN 1 THEN 'B'
+                                        WHEN 2 THEN 'C'
+                                        ELSE 'D' 
+                                    END AS 'Đáp án đúng',
+                                        CASE EXAM_LINE.ANSWER
+                                        WHEN 0 THEN 'A'
+                                        WHEN 1 THEN 'B'
+                                        WHEN 2 THEN 'C'
+                                        ELSE 'D' 
+                                    END AS 'Câu trả lời của sinh viên' 
+                                        FROM EXAM_LINE,QUESTION WHERE 
+                                            EXAM_HEADER_ID = @examHeaderID AND EXAM_LINE.QUESTION_ID = QUESTION.ID", con);
             cmd.Parameters.AddWithValue("@examHeaderID", examHeaderID);
 
             da = new SqlDataAdapter(cmd);

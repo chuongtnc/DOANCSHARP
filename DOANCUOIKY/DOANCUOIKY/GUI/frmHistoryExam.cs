@@ -47,7 +47,6 @@ namespace DOANCUOIKY.GUI
             {
                 gvRow = gvListExam.CurrentRow;
                 gvListQuestion.DataSource = historyExamBLL.LoadDataExamLineByParameters(gvRow.Cells[0].Value.ToString());
-                gvListQuestion.Columns[0].Visible = false;
             }
         }
     }
