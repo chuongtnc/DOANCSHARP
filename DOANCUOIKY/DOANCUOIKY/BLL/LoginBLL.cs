@@ -22,6 +22,5 @@ namespace DOANCUOIKY.BLL
 
             return wcf.LoginUserDetails(userInfoToValidate);
         }
-
     }
 }

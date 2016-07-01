@@ -111,6 +111,24 @@
   <wsdl:message name="IService1_InsertCreateAccount_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertCreateAccountResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_updateAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAccount" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_loadQuestion1_InputMessage">
+    <wsdl:part name="parameters" element="tns:loadQuestion1" />
+  </wsdl:message>
+  <wsdl:message name="IService1_loadQuestion1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:loadQuestion1Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_saveExam_InputMessage">
+    <wsdl:part name="parameters" element="tns:saveExam" />
+  </wsdl:message>
+  <wsdl:message name="IService1_saveExam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:saveExamResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="LoginUserDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUserDetails" message="tns:IService1_LoginUserDetails_InputMessage" />
@@ -179,6 +197,18 @@
     <wsdl:operation name="InsertCreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCreateAccount" message="tns:IService1_InsertCreateAccount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertCreateAccountResponse" message="tns:IService1_InsertCreateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateAccount" message="tns:IService1_updateAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateAccountResponse" message="tns:IService1_updateAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadQuestion1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/loadQuestion1" message="tns:IService1_loadQuestion1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/loadQuestion1Response" message="tns:IService1_loadQuestion1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveExam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/saveExam" message="tns:IService1_saveExam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/saveExamResponse" message="tns:IService1_saveExam_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -329,6 +359,33 @@
     </wsdl:operation>
     <wsdl:operation name="InsertCreateAccount">
       <soap:operation soapAction="http://tempuri.org/IService1/InsertCreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccount">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="loadQuestion1">
+      <soap:operation soapAction="http://tempuri.org/IService1/loadQuestion1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveExam">
+      <soap:operation soapAction="http://tempuri.org/IService1/saveExam" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

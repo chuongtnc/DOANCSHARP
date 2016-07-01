@@ -9,7 +9,6 @@ namespace WcfService1
     [DataContract]
     public class CreateAccount
     {
-
         string username = string.Empty;
         string password = string.Empty;
         int mssv = int.MinValue;

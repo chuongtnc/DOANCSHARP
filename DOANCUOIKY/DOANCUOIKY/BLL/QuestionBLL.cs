@@ -39,5 +39,10 @@ namespace DOANCUOIKY.BLL
         {
             return wcf.DeleteQuestion(questionID);
         }
+
+        //public DataTable loadQuestion(int titleId, string question, string cauA, string cauB, string cauC, string cauD, int answer)
+        //{
+        //    return wcf.loadQuestion(titleId, question, cauA, cauB, cauC, cauD, answer);
+        //}
     }
 }

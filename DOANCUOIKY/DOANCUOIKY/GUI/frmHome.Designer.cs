@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.menuHome = new System.Windows.Forms.MenuStrip();
             this.menuTEACHER = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuCATEGORY = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTITLE_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.NEW_QUESTION = new System.Windows.Forms.ToolStripMenuItem();
             this.HICTORY_EXAM = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,7 @@
             this.lbNAME1 = new System.Windows.Forms.Label();
             this.lbPOSITION = new System.Windows.Forms.Label();
             this.lbPOSITION1 = new System.Windows.Forms.Label();
-            this.menuCATEGORY = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongTinSvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,27 +74,34 @@
             this.NEW_QUESTION,
             this.HICTORY_EXAM});
             this.menuTEACHER.Name = "menuTEACHER";
-            this.menuTEACHER.Size = new System.Drawing.Size(58, 20);
+            this.menuTEACHER.Size = new System.Drawing.Size(60, 20);
             this.menuTEACHER.Text = "Teacher";
+            // 
+            // menuCATEGORY
+            // 
+            this.menuCATEGORY.Name = "menuCATEGORY";
+            this.menuCATEGORY.Size = new System.Drawing.Size(171, 22);
+            this.menuCATEGORY.Text = "Loại Mã đề";
+            this.menuCATEGORY.Click += new System.EventHandler(this.menuCATEGORY_Click);
             // 
             // menuTITLE_QUESTION
             // 
             this.menuTITLE_QUESTION.Name = "menuTITLE_QUESTION";
-            this.menuTITLE_QUESTION.Size = new System.Drawing.Size(156, 22);
+            this.menuTITLE_QUESTION.Size = new System.Drawing.Size(171, 22);
             this.menuTITLE_QUESTION.Text = "Tạo Mã đề";
             this.menuTITLE_QUESTION.Click += new System.EventHandler(this.menuTITLE_QUESTION_Click);
             // 
             // NEW_QUESTION
             // 
             this.NEW_QUESTION.Name = "NEW_QUESTION";
-            this.NEW_QUESTION.Size = new System.Drawing.Size(156, 22);
+            this.NEW_QUESTION.Size = new System.Drawing.Size(171, 22);
             this.NEW_QUESTION.Text = "Thêm mới câu hỏi";
             this.NEW_QUESTION.Click += new System.EventHandler(this.NEW_QUESTION_Click);
             // 
             // HICTORY_EXAM
             // 
             this.HICTORY_EXAM.Name = "HICTORY_EXAM";
-            this.HICTORY_EXAM.Size = new System.Drawing.Size(156, 22);
+            this.HICTORY_EXAM.Size = new System.Drawing.Size(171, 22);
             this.HICTORY_EXAM.Text = "Lịch sử thi";
             this.HICTORY_EXAM.Click += new System.EventHandler(this.HICTORY_EXAM_Click);
             // 
@@ -102,40 +110,44 @@
             this.menuSTUDENT.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EXAM_TEST,
             this.EXAM,
-            this.HISTORY_STUDENT_EXAM});
+            this.HISTORY_STUDENT_EXAM,
+            this.thongTinSvToolStripMenuItem});
             this.menuSTUDENT.Name = "menuSTUDENT";
-            this.menuSTUDENT.Size = new System.Drawing.Size(57, 20);
+            this.menuSTUDENT.Size = new System.Drawing.Size(60, 20);
             this.menuSTUDENT.Text = "Student";
             // 
             // EXAM_TEST
             // 
             this.EXAM_TEST.Name = "EXAM_TEST";
-            this.EXAM_TEST.Size = new System.Drawing.Size(122, 22);
+            this.EXAM_TEST.Size = new System.Drawing.Size(152, 22);
             this.EXAM_TEST.Text = "Thi thử";
+            this.EXAM_TEST.Click += new System.EventHandler(this.EXAM_TEST_Click);
             // 
             // EXAM
             // 
             this.EXAM.Name = "EXAM";
-            this.EXAM.Size = new System.Drawing.Size(122, 22);
+            this.EXAM.Size = new System.Drawing.Size(152, 22);
             this.EXAM.Text = "Thi chính";
             // 
             // HISTORY_STUDENT_EXAM
             // 
             this.HISTORY_STUDENT_EXAM.Name = "HISTORY_STUDENT_EXAM";
-            this.HISTORY_STUDENT_EXAM.Size = new System.Drawing.Size(122, 22);
+            this.HISTORY_STUDENT_EXAM.Size = new System.Drawing.Size(152, 22);
             this.HISTORY_STUDENT_EXAM.Text = "Lịch sử thi";
             // 
             // ABOUT
             // 
             this.ABOUT.Name = "ABOUT";
-            this.ABOUT.Size = new System.Drawing.Size(48, 20);
+            this.ABOUT.Size = new System.Drawing.Size(52, 20);
             this.ABOUT.Text = "About";
+            this.ABOUT.Click += new System.EventHandler(this.ABOUT_Click);
             // 
             // menuLOGOUT
             // 
             this.menuLOGOUT.Name = "menuLOGOUT";
-            this.menuLOGOUT.Size = new System.Drawing.Size(52, 20);
+            this.menuLOGOUT.Size = new System.Drawing.Size(57, 20);
             this.menuLOGOUT.Text = "Logout";
+            this.menuLOGOUT.Click += new System.EventHandler(this.menuLOGOUT_Click);
             // 
             // lbMSSV
             // 
@@ -210,12 +222,12 @@
             this.lbPOSITION1.Text = "Chức vụ  ";
             this.lbPOSITION1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // menuCATEGORY
+            // thongTinSvToolStripMenuItem
             // 
-            this.menuCATEGORY.Name = "menuCATEGORY";
-            this.menuCATEGORY.Size = new System.Drawing.Size(156, 22);
-            this.menuCATEGORY.Text = "Loại Mã đề";
-            this.menuCATEGORY.Click += new System.EventHandler(this.menuCATEGORY_Click);
+            this.thongTinSvToolStripMenuItem.Name = "thongTinSvToolStripMenuItem";
+            this.thongTinSvToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thongTinSvToolStripMenuItem.Text = "thong tin sv";
+            this.thongTinSvToolStripMenuItem.Click += new System.EventHandler(this.thongTinSvToolStripMenuItem_Click);
             // 
             // frmHome
             // 
@@ -262,5 +274,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuLOGOUT;
         private System.Windows.Forms.ToolStripMenuItem menuTITLE_QUESTION;
         private System.Windows.Forms.ToolStripMenuItem menuCATEGORY;
+        private System.Windows.Forms.ToolStripMenuItem thongTinSvToolStripMenuItem;
     }
 }
