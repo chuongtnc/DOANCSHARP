@@ -97,7 +97,7 @@ namespace DOANCUOIKY.GUI
                 i++;
                 count++;
             }
-            totalExamTime = 1 * count;
+            totalExamTime = 60 * count;
             examTime = new DateTime(2000, 1, 1, 0, totalExamTime / 60, totalExamTime % 60, 0);
             lblExamTime.Text = examTime.Minute.ToString() + " : " + examTime.Second.ToString();
             DialogResult r = MessageBox.Show(@"Thời gian làm bài bắt đầu đếm ngược.Điểm tối đa là 10 điểm.\n\rĐề thi có " + count + " câu hỏi. thoi gian lam bai " + totalExamTime / 60 + " phut\n\r Chúc bạn thi tốt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
