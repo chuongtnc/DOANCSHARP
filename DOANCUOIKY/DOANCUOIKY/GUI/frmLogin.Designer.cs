@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.edtUsername = new System.Windows.Forms.TextBox();
             this.edtPassword = new System.Windows.Forms.TextBox();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -88,11 +89,22 @@
             this.edtPassword.Size = new System.Drawing.Size(146, 20);
             this.edtPassword.TabIndex = 7;
             // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.Location = new System.Drawing.Point(179, 12);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(101, 23);
+            this.btnCreateAccount.TabIndex = 8;
+            this.btnCreateAccount.Text = "tao tai khoan";
+            this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.edtPassword);
             this.Controls.Add(this.edtUsername);
             this.Controls.Add(this.label2);
@@ -114,5 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox edtUsername;
         private System.Windows.Forms.TextBox edtPassword;
+        private System.Windows.Forms.Button btnCreateAccount;
     }
 }

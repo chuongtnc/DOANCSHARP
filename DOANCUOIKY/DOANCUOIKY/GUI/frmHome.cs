@@ -28,12 +28,12 @@ namespace DOANCUOIKY.GUI
 
 
             //Hiện thông tin user lên màn hình home
-            lbMSSV1.Text = UserInfoHolder.userInfo[2];
-            lbNAME1.Text = UserInfoHolder.userInfo[3];
-            lbPOSITION1.Text = UserInfoHolder.userInfo[4];
+            lbMSSV1.Text = UserInfoHolder.userInfo[3];
+            lbNAME1.Text = UserInfoHolder.userInfo[4];
+            lbPOSITION1.Text = UserInfoHolder.userInfo[5];
 
             //Disable những chức năng thuộc không thuộc Admin
-            if (UserInfoHolder.userInfo[4] == "ADMIN")
+            if (UserInfoHolder.userInfo[5] == "ADMIN")
             {
                 menuSTUDENT.Enabled = false;
             }
@@ -66,6 +66,31 @@ namespace DOANCUOIKY.GUI
         {
             frmCategory frmCategory = new frmCategory();
             frmCategory.ShowDialog();
+        }
+
+        private void menuLOGOUT_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+        }
+
+        private void ABOUT_Click(object sender, EventArgs e)
+        {
+            frmAbout about = new frmAbout();
+            about.ShowDialog();
+        }
+
+        private void EXAM_TEST_Click(object sender, EventArgs e)
+        {
+            frmExamTest examTest = new frmExamTest();
+            examTest.ShowDialog();
+        }
+
+        private void thongTinSvToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUpdateAccount updateAccount = new frmUpdateAccount();
+            updateAccount.ShowDialog();
         }
 
 

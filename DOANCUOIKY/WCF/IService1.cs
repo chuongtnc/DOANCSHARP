@@ -70,6 +70,17 @@ namespace WcfService1
 
         [OperationContract]
         string InsertCreateAccount(CreateAccount c);
+
+        [OperationContract]
+        string updateAccount(CreateAccount uc);
+
+        [OperationContract]
+        DataTable loadQuestion1(Bocauhoi q);
+
+        [OperationContract]
+        string saveExam(examheader eh);
+
+
     }
 
 
@@ -92,6 +103,51 @@ namespace WcfService1
             get { return password; }
             set { password = value; }
         }
+    }
+    
+    [DataContract]
+    public class question
+    {
+        int titleid = int.MaxValue;
+        [DataMember]
+        public int titleId
+        {
+            get { return titleid; }
+            set { titleid = value; }
+        }
+    }
 
+    [DataContract]
+    public class examheader
+    {
+        int ehid = int.MaxValue;
+        int ehtotalquestion = int.MaxValue;
+        int ehtotaltrueanswer = int.MaxValue;
+        int ehscore = int.MaxValue;
+
+        [DataMember]
+        public int ehId
+        {
+            get { return ehid; }
+            set { ehid = value; }
+        }
+        [DataMember]
+        public int ehTquestion
+        {
+            get { return ehtotalquestion; }
+            set { ehtotalquestion = value; }
+        }
+        [DataMember]
+        public int ehTTanswer
+        {
+            get { return ehtotaltrueanswer; }
+            set { ehtotaltrueanswer = value; }
+        }
+        [DataMember]
+        public int ehScore
+        {
+            get { return ehscore; }
+            set { ehscore = value; }
+        }
     }
 }

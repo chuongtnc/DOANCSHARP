@@ -167,6 +167,256 @@ namespace DOANCUOIKY.WCF {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Bocauhoi", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.SerializableAttribute()]
+    public partial class Bocauhoi : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int cauTraLoiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int dapAnDungField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dapanAField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dapanBField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dapanCField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string dapanDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string noiDungCauHoiField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int titleIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int cauTraLoi {
+            get {
+                return this.cauTraLoiField;
+            }
+            set {
+                if ((this.cauTraLoiField.Equals(value) != true)) {
+                    this.cauTraLoiField = value;
+                    this.RaisePropertyChanged("cauTraLoi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int dapAnDung {
+            get {
+                return this.dapAnDungField;
+            }
+            set {
+                if ((this.dapAnDungField.Equals(value) != true)) {
+                    this.dapAnDungField = value;
+                    this.RaisePropertyChanged("dapAnDung");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dapanA {
+            get {
+                return this.dapanAField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dapanAField, value) != true)) {
+                    this.dapanAField = value;
+                    this.RaisePropertyChanged("dapanA");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dapanB {
+            get {
+                return this.dapanBField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dapanBField, value) != true)) {
+                    this.dapanBField = value;
+                    this.RaisePropertyChanged("dapanB");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dapanC {
+            get {
+                return this.dapanCField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dapanCField, value) != true)) {
+                    this.dapanCField = value;
+                    this.RaisePropertyChanged("dapanC");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string dapanD {
+            get {
+                return this.dapanDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.dapanDField, value) != true)) {
+                    this.dapanDField = value;
+                    this.RaisePropertyChanged("dapanD");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string noiDungCauHoi {
+            get {
+                return this.noiDungCauHoiField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.noiDungCauHoiField, value) != true)) {
+                    this.noiDungCauHoiField = value;
+                    this.RaisePropertyChanged("noiDungCauHoi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int titleId {
+            get {
+                return this.titleIdField;
+            }
+            set {
+                if ((this.titleIdField.Equals(value) != true)) {
+                    this.titleIdField = value;
+                    this.RaisePropertyChanged("titleId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="examheader", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.SerializableAttribute()]
+    public partial class examheader : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ehIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ehScoreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ehTTanswerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ehTquestionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ehId {
+            get {
+                return this.ehIdField;
+            }
+            set {
+                if ((this.ehIdField.Equals(value) != true)) {
+                    this.ehIdField = value;
+                    this.RaisePropertyChanged("ehId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ehScore {
+            get {
+                return this.ehScoreField;
+            }
+            set {
+                if ((this.ehScoreField.Equals(value) != true)) {
+                    this.ehScoreField = value;
+                    this.RaisePropertyChanged("ehScore");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ehTTanswer {
+            get {
+                return this.ehTTanswerField;
+            }
+            set {
+                if ((this.ehTTanswerField.Equals(value) != true)) {
+                    this.ehTTanswerField = value;
+                    this.RaisePropertyChanged("ehTTanswer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ehTquestion {
+            get {
+                return this.ehTquestionField;
+            }
+            set {
+                if ((this.ehTquestionField.Equals(value) != true)) {
+                    this.ehTquestionField = value;
+                    this.RaisePropertyChanged("ehTquestion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF.IService1")]
     public interface IService1 {
@@ -221,6 +471,15 @@ namespace DOANCUOIKY.WCF {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/InsertCreateAccount", ReplyAction="http://tempuri.org/IService1/InsertCreateAccountResponse")]
         string InsertCreateAccount(DOANCUOIKY.WCF.CreateAccount c);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/updateAccount", ReplyAction="http://tempuri.org/IService1/updateAccountResponse")]
+        string updateAccount(DOANCUOIKY.WCF.CreateAccount uc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/loadQuestion1", ReplyAction="http://tempuri.org/IService1/loadQuestion1Response")]
+        System.Data.DataTable loadQuestion1(DOANCUOIKY.WCF.Bocauhoi q);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/saveExam", ReplyAction="http://tempuri.org/IService1/saveExamResponse")]
+        string saveExam(DOANCUOIKY.WCF.examheader eh);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -316,6 +575,18 @@ namespace DOANCUOIKY.WCF {
         
         public string InsertCreateAccount(DOANCUOIKY.WCF.CreateAccount c) {
             return base.Channel.InsertCreateAccount(c);
+        }
+        
+        public string updateAccount(DOANCUOIKY.WCF.CreateAccount uc) {
+            return base.Channel.updateAccount(uc);
+        }
+        
+        public System.Data.DataTable loadQuestion1(DOANCUOIKY.WCF.Bocauhoi q) {
+            return base.Channel.loadQuestion1(q);
+        }
+        
+        public string saveExam(DOANCUOIKY.WCF.examheader eh) {
+            return base.Channel.saveExam(eh);
         }
     }
 }

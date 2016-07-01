@@ -16,4 +16,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CreateAccount" nillable="true" type="tns:CreateAccount" />
+  <xs:complexType name="Bocauhoi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cauTraLoi" type="xs:int" />
+      <xs:element minOccurs="0" name="dapAnDung" type="xs:int" />
+      <xs:element minOccurs="0" name="dapanA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dapanB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dapanC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dapanD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="noiDungCauHoi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="titleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bocauhoi" nillable="true" type="tns:Bocauhoi" />
+  <xs:complexType name="examheader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ehId" type="xs:int" />
+      <xs:element minOccurs="0" name="ehScore" type="xs:int" />
+      <xs:element minOccurs="0" name="ehTTanswer" type="xs:int" />
+      <xs:element minOccurs="0" name="ehTquestion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="examheader" nillable="true" type="tns:examheader" />
 </xs:schema>

@@ -54,5 +54,12 @@ namespace DOANCUOIKY.GUI
             //Kết thúc chương trinh
             Application.Exit();
         }
+
+        private void btnCreateAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCreateAccount createAccount = new frmCreateAccount();
+            createAccount.ShowDialog();
+        }
     }
 }

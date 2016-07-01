@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -29,7 +30,7 @@ namespace WcfService1
         {
             List<string> usr = new List<string>();
             con.Open();
-            cmd = new SqlCommand("SELECT ID,USERNAME,NO,NAME,POSITION FROM ACCOUNT WHERE USERNAME=@Username AND PASSWORD=@Password", con);
+            cmd = new SqlCommand("SELECT * FROM ACCOUNT WHERE USERNAME=@Username AND PASSWORD=@Password", con);
             cmd.Parameters.AddWithValue("@Username", userInfoToValidate.Username);
             cmd.Parameters.AddWithValue("@Password", userInfoToValidate.Password);
 
@@ -42,6 +43,8 @@ namespace WcfService1
                 usr.Add(dr[2].ToString());
                 usr.Add(dr[3].ToString());
                 usr.Add(dr[4].ToString());
+                usr.Add(dr[5].ToString());
+                usr.Add(dr[6].ToString());
             }
             con.Close();
             return usr;
@@ -271,7 +274,8 @@ namespace WcfService1
                 {
                     con.Open();
 
-                    cmd = new SqlCommand("INSERT INTO QUESTION (TITLE_ID,NO ,QUESTION,A,B,C,D,ANSWER,STATUS,DATE) VALUES(@titleID, @questionNo, @question, @A, @B, @C ,@D, @answer, @status, GETDATE())", con);
+                    cmd = new SqlCommand(@"INSERT INTO QUESTION (TITLE_ID,NO ,QUESTION,A,B,C,D,ANSWER,STATUS,DATE) 
+                                          VALUES(@titleID, @questionNo, @question, @A, @B, @C ,@D, @answer, @status, GETDATE())", con);
                     cmd.Parameters.AddWithValue("@titleID", titleID);
                     cmd.Parameters.AddWithValue("@questionNo", questionNo);
                     cmd.Parameters.AddWithValue("@question", question);
@@ -296,7 +300,7 @@ namespace WcfService1
         public DataTable LoadDataQuestion()
         {
 
-            da = new SqlDataAdapter("SELECT * FROM QUESTION", con);
+            da = new SqlDataAdapter("SELECT * FROM QUESTION",con);
             var dt = new DataTable("DataQuestion");
             da.Fill(dt);
             return dt;
@@ -325,7 +329,7 @@ namespace WcfService1
 
             con.Open();
 
-            cmd = new SqlCommand("UPDATE QUESTION SET TITLE_ID = @titleID, QUESTION = @question, A = @A, B = @B, C = @C, D = @D, ANSWER = @answer, STATUS = @status WHERE ID = @questionID", con);
+            cmd = new SqlCommand(@"UPDATE QUESTION SET TITLE_ID = @titleID, QUESTION = @question, A = @A, B = @B, C = @C, D = @D, ANSWER = @answer, STATUS = @status WHERE ID = @questionID", con);
             cmd.Parameters.AddWithValue("@questionID", questionID);
             cmd.Parameters.AddWithValue("@titleID", titleID);
             cmd.Parameters.AddWithValue("@question", question);
@@ -366,13 +370,14 @@ namespace WcfService1
             con.Open();
             cmd = new SqlCommand(@"INSERT INTO ACCOUNT(USERNAME,PASSWORD,NO,NAME,POSITION,ENABLE_FLAG) 
                                  VALUES(@UserName, @Password, @Mssv, @HovaTen, @Position, @Enable_flag)", con);
-
+            
             cmd.Parameters.AddWithValue("@UserName", c.UserName);
             cmd.Parameters.AddWithValue("@Password", c.Password);
             cmd.Parameters.AddWithValue("@Mssv", c.Mssv);
             cmd.Parameters.AddWithValue("@HovaTen", c.HovaTen);
             cmd.Parameters.AddWithValue("@Position", "STUDEN");
             cmd.Parameters.AddWithValue("@Enable_flag", "S");
+          
             int result = cmd.ExecuteNonQuery();
             if (result == 1)
             {
@@ -382,10 +387,86 @@ namespace WcfService1
             {
                 mess = c.UserName + " Details not inserted successfully";
             }
-            return mess;
-           
+            con.Close();
+            return mess;           
         }
 
+        private bool kiemtratontai(string ten)
+        {
+            bool result = false;
+            cmd = new SqlCommand("SELECT * FROM ACCOUNT", con);
+            con.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                if (ten == dr.GetString(1))
+                {
+                    result = true;
+                    break;
+                }
+            }
+            con.Close();
+            return result;
+        }  
 
+
+        public string updateAccount(CreateAccount uc)
+        {
+            string mess;
+            con.Open();
+            cmd = new SqlCommand(@"UPDATE ACCOUNT SET USERNAME=@UserName, PASSWORD=@Password, NO=@Mssv, NAME=@HovaTen WHERE USERNAME = @UserName ", con);
+            cmd.Parameters.AddWithValue("@UserName", uc.UserName);
+            cmd.Parameters.AddWithValue("@Password", uc.Password);
+            cmd.Parameters.AddWithValue("@Mssv", uc.Mssv);
+            cmd.Parameters.AddWithValue("@HovaTen", uc.HovaTen);
+
+            int result = cmd.ExecuteNonQuery();
+            if(result == 1)
+            {
+                mess = "cap nhap thanh cong";
+            }
+            else
+            {
+                mess = "cap nhap that bai";
+            }
+            con.Close();
+            return mess;
+        }
+
+        public DataTable loadQuestion1(Bocauhoi q)
+        {
+            con.Open();
+            cmd = new SqlCommand("SELECT * FROM QUESTION WHERE TITLE_ID=@titleid", con);
+            cmd.Parameters.AddWithValue("@titleid", q.titleId);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataQuestion");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        public string saveExam(examheader eh)
+        {
+            string a;
+            con.Open();
+            cmd = new SqlCommand(@"INSERT INTO EXAM_HEADER(ACCOUNT_ID, TOTAL_QUESTION, TOTAL_TRUE_ANSWER, SCORE, DATE)
+                                VALUES(@ehId, @ehTquestion, @ehTTanswer, @ehScore, GETDATE())", con);
+            cmd.Parameters.AddWithValue("@ehId", eh.ehId);
+            cmd.Parameters.AddWithValue("@ehTquestion", eh.ehTquestion);
+            cmd.Parameters.AddWithValue("@ehTTanswer", eh.ehTTanswer);
+            cmd.Parameters.AddWithValue("@ehScore", eh.ehScore);
+
+            int result = cmd.ExecuteNonQuery();
+            if(result == 1)
+            {
+                a = "cap nhap thanh cong";
+            }
+            else{
+                a = "cap nhap that bai";
+            }
+            return a;
+        }
     }
 }
