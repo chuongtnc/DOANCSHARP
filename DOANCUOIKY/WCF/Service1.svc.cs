@@ -447,25 +447,42 @@ namespace WcfService1
             return dt;
         }
 
-        public string saveExam(examheader eh)
+        public int saveExam(examheader eh)
         {
-            string a;
             con.Open();
             cmd = new SqlCommand(@"INSERT INTO EXAM_HEADER(ACCOUNT_ID, TOTAL_QUESTION, TOTAL_TRUE_ANSWER, SCORE, DATE)
+                                OUTPUT Inserted.ID
                                 VALUES(@ehId, @ehTquestion, @ehTTanswer, @ehScore, GETDATE())", con);
             cmd.Parameters.AddWithValue("@ehId", eh.ehId);
             cmd.Parameters.AddWithValue("@ehTquestion", eh.ehTquestion);
             cmd.Parameters.AddWithValue("@ehTTanswer", eh.ehTTanswer);
             cmd.Parameters.AddWithValue("@ehScore", eh.ehScore);
 
+            int result = (int)cmd.ExecuteScalar();
+            con.Close();
+            return result;
+        }
+
+        public string insertExamLine(examLine el)
+        {
+            string a;
+            con.Open();
+            cmd = new SqlCommand(@"INSERT INTO EXAM_LINE(EXAM_HEADER_ID, QUESTION_ID, ANSWER)
+                                   VALUES(@elId, @elQuestionId, @elAnswer)", con);
+            cmd.Parameters.AddWithValue("@elId", el.elId);
+            cmd.Parameters.AddWithValue("@elQuestionId", el.elQuestionId);
+            cmd.Parameters.AddWithValue("@elAnswer", el.elAnswer);
+
             int result = cmd.ExecuteNonQuery();
             if(result == 1)
             {
-                a = "cap nhap thanh cong";
+                a = "cap nhap thanh cong EXAM_LINE";
             }
-            else{
-                a = "cap nhap that bai";
+            else
+            {
+                a = "cap nhap that bai EXAM_LINE";
             }
+            con.Close();
             return a;
         }
     }

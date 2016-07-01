@@ -38,4 +38,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="examheader" nillable="true" type="tns:examheader" />
+  <xs:complexType name="examLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="elAnswer" type="xs:int" />
+      <xs:element minOccurs="0" name="elId" type="xs:int" />
+      <xs:element minOccurs="0" name="elQuestionId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="examLine" nillable="true" type="tns:examLine" />
 </xs:schema>
