@@ -32,6 +32,7 @@ namespace DOANCUOIKY.GUI
         int count = 0;
         int diem = 0;
         int socaudung = 0;
+        int resultId;
 
         public frmExamTest()
         {
@@ -80,7 +81,7 @@ namespace DOANCUOIKY.GUI
             listView1.Hide();
             Bocauhoi q = new Bocauhoi();
             q.titleId = Int32.Parse(lblId.Text);
-            DataTable dt = service.loadQuestion1(q);
+            DataTable dt = service.loadQuestion1(q);   
             int i = 0;
             foreach (DataRow dr in dt.Rows)
             {
@@ -99,7 +100,7 @@ namespace DOANCUOIKY.GUI
             totalExamTime = 1 * count;
             examTime = new DateTime(2000, 1, 1, 0, totalExamTime / 60, totalExamTime % 60, 0);
             lblExamTime.Text = examTime.Minute.ToString() + " : " + examTime.Second.ToString();
-            DialogResult r = MessageBox.Show("Thời gian làm bài bắt đầu đếm ngược.Điểm tối đa là 10 điểm.\n\rĐề thi có " + count + " câu hỏi. thoi gian lam bai " + totalExamTime / 60 + " phut\n\r Chúc bạn thi tốt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DialogResult r = MessageBox.Show(@"Thời gian làm bài bắt đầu đếm ngược.Điểm tối đa là 10 điểm.\n\rĐề thi có " + count + " câu hỏi. thoi gian lam bai " + totalExamTime / 60 + " phut\n\r Chúc bạn thi tốt!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             {
                 if (r == DialogResult.OK)
                 {
@@ -137,7 +138,8 @@ namespace DOANCUOIKY.GUI
                     {
                         chamdiem();
                         luudiem();
-                        MessageBox.Show(diem.ToString());
+                        InsertExamLine();
+                        MessageBox.Show("so diem cua bna la"+diem.ToString());
                     }
                 }
             }
@@ -160,7 +162,26 @@ namespace DOANCUOIKY.GUI
             eh.ehTTanswer = socaudung;
             eh.ehScore = diem;
 
-            string result = service.saveExam(eh);
+            resultId = service.saveExam(eh);
+        }
+
+        private void InsertExamLine()
+        {
+            examLine el = new examLine();       
+            for(int i = 0 ; i< count ; i++)
+            {
+                el.elId = resultId;
+                el.elQuestionId = Int32.Parse(ar[i, 0]);
+                if(ar[i,7] == "")
+                {
+                    el.elAnswer = 4;
+                }
+                else
+                {
+                    el.elAnswer = Int32.Parse(ar[i, 7]);
+                }
+                string result = service.insertExamLine(el);
+            }
         }
 
         private void btnEndExam_Click(object sender, EventArgs e)
@@ -171,7 +192,8 @@ namespace DOANCUOIKY.GUI
             {
                 chamdiem();
                 luudiem();
-                MessageBox.Show(diem.ToString());
+                InsertExamLine();
+                MessageBox.Show("so diem cua ban la " + diem.ToString());
                 timer.Stop();
                 listView1.Show();
                 btnExit.Enabled = true;
@@ -220,7 +242,6 @@ namespace DOANCUOIKY.GUI
             if (vitri >= count)
             {
                 vitri = 0;
-
             }
             napcauhoi(vitri);
             Danh_DapAn(vitri);

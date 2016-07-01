@@ -90,7 +90,10 @@ namespace WcfService1
         DataTable loadQuestion1(Bocauhoi q);
 
         [OperationContract]
-        string saveExam(examheader eh);
+        int saveExam(examheader eh);
+
+        [OperationContract]
+        string insertExamLine(examLine el);
 
 
     }
@@ -160,6 +163,33 @@ namespace WcfService1
         {
             get { return ehscore; }
             set { ehscore = value; }
+        }
+    }
+
+    [DataContract]
+    public class examLine
+    {
+        int elid = int.MaxValue;
+        int elquestionid = int.MaxValue;
+        int elanswer = int.MaxValue;
+
+        [DataMember]
+        public int elId
+        {
+            get { return elid; }
+            set { elid = value; }
+        }
+        [DataMember]
+        public int elQuestionId
+        {
+            get { return elquestionid; }
+            set { elquestionid = value; }
+        }
+        [DataMember]
+        public int elAnswer
+        {
+            get { return elanswer; }
+            set { elanswer = value; }
         }
     }
 }

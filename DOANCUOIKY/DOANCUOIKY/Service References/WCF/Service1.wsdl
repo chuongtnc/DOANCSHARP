@@ -147,6 +147,12 @@
   <wsdl:message name="IService1_saveExam_OutputMessage">
     <wsdl:part name="parameters" element="tns:saveExamResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_insertExamLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertExamLine" />
+  </wsdl:message>
+  <wsdl:message name="IService1_insertExamLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertExamLineResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="LoginUserDetails">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoginUserDetails" message="tns:IService1_LoginUserDetails_InputMessage" />
@@ -239,6 +245,10 @@
     <wsdl:operation name="saveExam">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/saveExam" message="tns:IService1_saveExam_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/saveExamResponse" message="tns:IService1_saveExam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertExamLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/insertExamLine" message="tns:IService1_insertExamLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/insertExamLineResponse" message="tns:IService1_insertExamLine_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -443,6 +453,15 @@
     </wsdl:operation>
     <wsdl:operation name="saveExam">
       <soap:operation soapAction="http://tempuri.org/IService1/saveExam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertExamLine">
+      <soap:operation soapAction="http://tempuri.org/IService1/insertExamLine" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

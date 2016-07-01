@@ -417,6 +417,83 @@ namespace DOANCUOIKY.WCF {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="examLine", Namespace="http://schemas.datacontract.org/2004/07/WcfService1")]
+    [System.SerializableAttribute()]
+    public partial class examLine : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int elAnswerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int elIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int elQuestionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int elAnswer {
+            get {
+                return this.elAnswerField;
+            }
+            set {
+                if ((this.elAnswerField.Equals(value) != true)) {
+                    this.elAnswerField = value;
+                    this.RaisePropertyChanged("elAnswer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int elId {
+            get {
+                return this.elIdField;
+            }
+            set {
+                if ((this.elIdField.Equals(value) != true)) {
+                    this.elIdField = value;
+                    this.RaisePropertyChanged("elId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int elQuestionId {
+            get {
+                return this.elQuestionIdField;
+            }
+            set {
+                if ((this.elQuestionIdField.Equals(value) != true)) {
+                    this.elQuestionIdField = value;
+                    this.RaisePropertyChanged("elQuestionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCF.IService1")]
     public interface IService1 {
@@ -488,7 +565,10 @@ namespace DOANCUOIKY.WCF {
         System.Data.DataTable loadQuestion1(DOANCUOIKY.WCF.Bocauhoi q);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/saveExam", ReplyAction="http://tempuri.org/IService1/saveExamResponse")]
-        string saveExam(DOANCUOIKY.WCF.examheader eh);
+        int saveExam(DOANCUOIKY.WCF.examheader eh);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/insertExamLine", ReplyAction="http://tempuri.org/IService1/insertExamLineResponse")]
+        string insertExamLine(DOANCUOIKY.WCF.examLine el);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -606,8 +686,12 @@ namespace DOANCUOIKY.WCF {
             return base.Channel.loadQuestion1(q);
         }
         
-        public string saveExam(DOANCUOIKY.WCF.examheader eh) {
+        public int saveExam(DOANCUOIKY.WCF.examheader eh) {
             return base.Channel.saveExam(eh);
+        }
+        
+        public string insertExamLine(DOANCUOIKY.WCF.examLine el) {
+            return base.Channel.insertExamLine(el);
         }
     }
 }
