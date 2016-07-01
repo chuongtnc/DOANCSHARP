@@ -19,7 +19,7 @@ namespace WcfService1
         SqlCommand cmd;
         public Service1()
         {
-            con = new SqlConnection(@"Data Source=daobadat-PC\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=PE-CHUT\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
             //comm = con.CreateCommand();
         }
 
@@ -360,33 +360,30 @@ namespace WcfService1
 
 
 
-        public int InsertCreateAccount(CreateAccount c)
+        public string InsertCreateAccount(CreateAccount c)
         {
-            try
-            {
-                cmd = new SqlCommand("INSERT INTO ACCOUNT VALUES(@USERNAME, @PASSWORD @NO, @NAME)", con);
-                //comm.CommandText = "INSERT INTO ACCOUNT VALUES(@USERNAME, @PASSWORD @NO, @NAME)";
-                cmd.Parameters.AddWithValue("USERNAME", c.UserName);
-                cmd.Parameters.AddWithValue("PASSWORD", c.Password);
-                cmd.Parameters.AddWithValue("NO", c.Mssv);
-                cmd.Parameters.AddWithValue("NAME", c.HovaTen);
+            string mess;
+            con.Open();
+            cmd = new SqlCommand(@"INSERT INTO ACCOUNT(USERNAME,PASSWORD,NO,NAME,POSITION,ENABLE_FLAG) 
+                                 VALUES(@UserName, @Password, @Mssv, @HovaTen, @Position, @Enable_flag)", con);
 
-                cmd.CommandType = CommandType.Text;
-                con.Open();
-
-                return cmd.ExecuteNonQuery();
-            }
-            catch (Exception)
+            cmd.Parameters.AddWithValue("@UserName", c.UserName);
+            cmd.Parameters.AddWithValue("@Password", c.Password);
+            cmd.Parameters.AddWithValue("@Mssv", c.Mssv);
+            cmd.Parameters.AddWithValue("@HovaTen", c.HovaTen);
+            cmd.Parameters.AddWithValue("@Position", "STUDEN");
+            cmd.Parameters.AddWithValue("@Enable_flag", "S");
+            int result = cmd.ExecuteNonQuery();
+            if (result == 1)
             {
-                throw;
+                mess = c.UserName + " Details inserted successfully";
             }
-            finally
+            else
             {
-                if(con !=null)
-                {
-                    con.Close();
-                }
+                mess = c.UserName + " Details not inserted successfully";
             }
+            return mess;
+           
         }
 
 

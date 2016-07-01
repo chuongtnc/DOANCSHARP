@@ -69,7 +69,7 @@ namespace WcfService1
         //--------------
 
         [OperationContract]
-        int InsertCreateAccount(CreateAccount c);
+        string InsertCreateAccount(CreateAccount c);
     }
 
 
