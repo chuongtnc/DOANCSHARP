@@ -39,6 +39,7 @@
             this.EXAM_TEST = new System.Windows.Forms.ToolStripMenuItem();
             this.EXAM = new System.Windows.Forms.ToolStripMenuItem();
             this.HISTORY_STUDENT_EXAM = new System.Windows.Forms.ToolStripMenuItem();
+            this.thongTinSvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ABOUT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLOGOUT = new System.Windows.Forms.ToolStripMenuItem();
             this.lbMSSV = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.lbNAME1 = new System.Windows.Forms.Label();
             this.lbPOSITION = new System.Windows.Forms.Label();
             this.lbPOSITION1 = new System.Windows.Forms.Label();
-            this.thongTinSvToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +134,14 @@
             this.HISTORY_STUDENT_EXAM.Name = "HISTORY_STUDENT_EXAM";
             this.HISTORY_STUDENT_EXAM.Size = new System.Drawing.Size(152, 22);
             this.HISTORY_STUDENT_EXAM.Text = "Lịch sử thi";
+            this.HISTORY_STUDENT_EXAM.Click += new System.EventHandler(this.HISTORY_STUDENT_EXAM_Click);
+            // 
+            // thongTinSvToolStripMenuItem
+            // 
+            this.thongTinSvToolStripMenuItem.Name = "thongTinSvToolStripMenuItem";
+            this.thongTinSvToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thongTinSvToolStripMenuItem.Text = "thong tin sv";
+            this.thongTinSvToolStripMenuItem.Click += new System.EventHandler(this.thongTinSvToolStripMenuItem_Click);
             // 
             // ABOUT
             // 
@@ -221,13 +229,6 @@
             this.lbPOSITION1.TabIndex = 7;
             this.lbPOSITION1.Text = "Chức vụ  ";
             this.lbPOSITION1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // thongTinSvToolStripMenuItem
-            // 
-            this.thongTinSvToolStripMenuItem.Name = "thongTinSvToolStripMenuItem";
-            this.thongTinSvToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.thongTinSvToolStripMenuItem.Text = "thong tin sv";
-            this.thongTinSvToolStripMenuItem.Click += new System.EventHandler(this.thongTinSvToolStripMenuItem_Click);
             // 
             // frmHome
             // 
