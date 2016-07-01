@@ -93,6 +93,12 @@ namespace DOANCUOIKY.GUI
             updateAccount.ShowDialog();
         }
 
+        private void HISTORY_STUDENT_EXAM_Click(object sender, EventArgs e)
+        {
+            frmHistoryExamStudent HistoryExamStudent = new frmHistoryExamStudent();
+            HistoryExamStudent.ShowDialog();
+        }
+
 
     }
 }
