@@ -19,7 +19,7 @@ namespace DOANCUOIKY.BLL
         {
             return wcf.LoadDataStudentByParameters(studentNo, studentName);
         }
-
+        
         public DataTable LoadDataExamByParameters(string studentID)
         {
             return wcf.LoadDataExamByParameters(studentID);

@@ -149,6 +149,9 @@
     <EmbeddedResource Include="GUI\frmHistoryExam.resx">
       <DependentUpon>frmHistoryExam.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHistoryExamStudent.resx">
+      <DependentUpon>frmHistoryExamStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
