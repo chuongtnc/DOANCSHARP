@@ -27,7 +27,7 @@ namespace DOANCUOIKY.BLL
 
         public DataTable LoadDataCategoryByParameters(string categoryNo, string categoryName)
         {
-            return wcf.LoadDataCategoryByParemeters(categoryNo, categoryName);
+            return wcf.LoadDataCategoryByParameters(categoryNo, categoryName);
         }
 
         public Boolean UpdateCategory(string categoryID, string categoryNo, string categoryName)

@@ -27,11 +27,11 @@
   <wsdl:message name="IService1_LoadDataTitle_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadDataTitleResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_LoadDataTitleByParemeters_InputMessage">
-    <wsdl:part name="parameters" element="tns:LoadDataTitleByParemeters" />
+  <wsdl:message name="IService1_LoadDataTitleByParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataTitleByParameters" />
   </wsdl:message>
-  <wsdl:message name="IService1_LoadDataTitleByParemeters_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoadDataTitleByParemetersResponse" />
+  <wsdl:message name="IService1_LoadDataTitleByParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataTitleByParametersResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_UpdateTitle_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateTitle" />
@@ -57,11 +57,11 @@
   <wsdl:message name="IService1_LoadDataCategory_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadDataCategoryResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_LoadDataCategoryByParemeters_InputMessage">
-    <wsdl:part name="parameters" element="tns:LoadDataCategoryByParemeters" />
+  <wsdl:message name="IService1_LoadDataCategoryByParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataCategoryByParameters" />
   </wsdl:message>
-  <wsdl:message name="IService1_LoadDataCategoryByParemeters_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoadDataCategoryByParemetersResponse" />
+  <wsdl:message name="IService1_LoadDataCategoryByParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataCategoryByParametersResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_UpdateCategory_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateCategory" />
@@ -87,11 +87,11 @@
   <wsdl:message name="IService1_LoadDataQuestion_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoadDataQuestionResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_LoadDataQuestionByParemeters_InputMessage">
-    <wsdl:part name="parameters" element="tns:LoadDataQuestionByParemeters" />
+  <wsdl:message name="IService1_LoadDataQuestionByParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataQuestionByParameters" />
   </wsdl:message>
-  <wsdl:message name="IService1_LoadDataQuestionByParemeters_OutputMessage">
-    <wsdl:part name="parameters" element="tns:LoadDataQuestionByParemetersResponse" />
+  <wsdl:message name="IService1_LoadDataQuestionByParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataQuestionByParametersResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_UpdateQuestion_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateQuestion" />
@@ -104,6 +104,24 @@
   </wsdl:message>
   <wsdl:message name="IService1_DeleteQuestion_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataStudentByParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataStudentByParameters" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataStudentByParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataStudentByParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataExamByParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataExamByParameters" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataExamByParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataExamByParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataExamLineByParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataExamLineByParameters" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadDataExamLineByParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadDataExamLineByParametersResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_InsertCreateAccount_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertCreateAccount" />
@@ -142,9 +160,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataTitle" message="tns:IService1_LoadDataTitle_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataTitleResponse" message="tns:IService1_LoadDataTitle_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="LoadDataTitleByParemeters">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataTitleByParemeters" message="tns:IService1_LoadDataTitleByParemeters_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataTitleByParemetersResponse" message="tns:IService1_LoadDataTitleByParemeters_OutputMessage" />
+    <wsdl:operation name="LoadDataTitleByParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataTitleByParameters" message="tns:IService1_LoadDataTitleByParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataTitleByParametersResponse" message="tns:IService1_LoadDataTitleByParameters_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateTitle">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateTitle" message="tns:IService1_UpdateTitle_InputMessage" />
@@ -162,9 +180,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataCategory" message="tns:IService1_LoadDataCategory_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryResponse" message="tns:IService1_LoadDataCategory_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="LoadDataCategoryByParemeters">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryByParemeters" message="tns:IService1_LoadDataCategoryByParemeters_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryByParemetersResponse" message="tns:IService1_LoadDataCategoryByParemeters_OutputMessage" />
+    <wsdl:operation name="LoadDataCategoryByParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryByParameters" message="tns:IService1_LoadDataCategoryByParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataCategoryByParametersResponse" message="tns:IService1_LoadDataCategoryByParameters_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateCategory">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateCategory" message="tns:IService1_UpdateCategory_InputMessage" />
@@ -182,9 +200,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataQuestion" message="tns:IService1_LoadDataQuestion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataQuestionResponse" message="tns:IService1_LoadDataQuestion_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="LoadDataQuestionByParemeters">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataQuestionByParemeters" message="tns:IService1_LoadDataQuestionByParemeters_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataQuestionByParemetersResponse" message="tns:IService1_LoadDataQuestionByParemeters_OutputMessage" />
+    <wsdl:operation name="LoadDataQuestionByParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataQuestionByParameters" message="tns:IService1_LoadDataQuestionByParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataQuestionByParametersResponse" message="tns:IService1_LoadDataQuestionByParameters_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateQuestion">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateQuestion" message="tns:IService1_UpdateQuestion_InputMessage" />
@@ -193,6 +211,18 @@
     <wsdl:operation name="DeleteQuestion">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteQuestion" message="tns:IService1_DeleteQuestion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteQuestionResponse" message="tns:IService1_DeleteQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataStudentByParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataStudentByParameters" message="tns:IService1_LoadDataStudentByParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataStudentByParametersResponse" message="tns:IService1_LoadDataStudentByParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExamByParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataExamByParameters" message="tns:IService1_LoadDataExamByParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataExamByParametersResponse" message="tns:IService1_LoadDataExamByParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExamLineByParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadDataExamLineByParameters" message="tns:IService1_LoadDataExamLineByParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadDataExamLineByParametersResponse" message="tns:IService1_LoadDataExamLineByParameters_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertCreateAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertCreateAccount" message="tns:IService1_InsertCreateAccount_InputMessage" />
@@ -240,8 +270,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="LoadDataTitleByParemeters">
-      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataTitleByParemeters" style="document" />
+    <wsdl:operation name="LoadDataTitleByParameters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataTitleByParameters" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -285,8 +315,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="LoadDataCategoryByParemeters">
-      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataCategoryByParemeters" style="document" />
+    <wsdl:operation name="LoadDataCategoryByParameters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataCategoryByParameters" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -330,8 +360,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="LoadDataQuestionByParemeters">
-      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataQuestionByParemeters" style="document" />
+    <wsdl:operation name="LoadDataQuestionByParameters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataQuestionByParameters" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -350,6 +380,33 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteQuestion">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataStudentByParameters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataStudentByParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExamByParameters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataExamByParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadDataExamLineByParameters">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadDataExamLineByParameters" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

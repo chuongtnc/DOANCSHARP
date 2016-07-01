@@ -62,13 +62,16 @@
             this.btAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvQuestion)).BeginInit();
             this.gbTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox
             // 
+            this.groupBox.Controls.Add(this.dataGridView1);
             this.groupBox.Controls.Add(this.label7);
             this.groupBox.Controls.Add(this.cbStatusSearch);
             this.groupBox.Controls.Add(this.edtQuestionSearch);
@@ -405,6 +408,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "No";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(312, 182);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 18;
+            // 
             // frmNewQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvQuestion)).EndInit();
             this.gbTitle.ResumeLayout(false);
             this.gbTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,6 +471,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.ComboBox cbAnswer;
+        private System.Windows.Forms.DataGridView dataGridView1;
 
 
     }

@@ -56,7 +56,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LoadDataTitleByParemeters">
+  <xs:element name="LoadDataTitleByParameters">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="titleNo" nillable="true" type="xs:string" />
@@ -65,10 +65,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LoadDataTitleByParemetersResponse">
+  <xs:element name="LoadDataTitleByParametersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="LoadDataTitleByParemetersResult" nillable="true">
+        <xs:element minOccurs="0" name="LoadDataTitleByParametersResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -154,7 +154,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LoadDataCategoryByParemeters">
+  <xs:element name="LoadDataCategoryByParameters">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="categoryNo" nillable="true" type="xs:string" />
@@ -162,10 +162,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LoadDataCategoryByParemetersResponse">
+  <xs:element name="LoadDataCategoryByParametersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="LoadDataCategoryByParemetersResult" nillable="true">
+        <xs:element minOccurs="0" name="LoadDataCategoryByParametersResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -257,7 +257,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LoadDataQuestionByParemeters">
+  <xs:element name="LoadDataQuestionByParameters">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="titleID" type="xs:int" />
@@ -267,10 +267,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="LoadDataQuestionByParemetersResponse">
+  <xs:element name="LoadDataQuestionByParametersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="LoadDataQuestionByParemetersResult" nillable="true">
+        <xs:element minOccurs="0" name="LoadDataQuestionByParametersResult" nillable="true">
           <xs:complexType>
             <xs:annotation>
               <xs:appinfo>
@@ -319,6 +319,85 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="DeleteQuestionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadDataStudentByParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="studentName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadDataStudentByParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadDataStudentByParametersResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadDataExamByParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadDataExamByParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadDataExamByParametersResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadDataExamLineByParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="examHeaderID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadDataExamLineByParametersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadDataExamLineByParametersResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>

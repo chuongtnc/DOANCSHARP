@@ -74,9 +74,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(44, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "HOvaTEN";
+            this.label4.Text = "Họ và tên";
             // 
             // label3
             // 
@@ -92,18 +92,18 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(44, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "PASSWORD";
+            this.label2.Text = "Password";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(44, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "USERNAME";
+            this.label1.Text = "Username";
             // 
             // btnExit
             // 
@@ -111,7 +111,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 11;
-            this.btnExit.Text = "EXIT";
+            this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -121,7 +121,7 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);
             this.btnInsert.TabIndex = 10;
-            this.btnInsert.Text = "UPDATE";
+            this.btnInsert.Text = "Update";
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 

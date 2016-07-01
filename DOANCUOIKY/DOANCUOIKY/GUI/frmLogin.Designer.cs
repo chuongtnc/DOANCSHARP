@@ -95,7 +95,7 @@
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(101, 23);
             this.btnCreateAccount.TabIndex = 8;
-            this.btnCreateAccount.Text = "tao tai khoan";
+            this.btnCreateAccount.Text = "Tạo Tài Khoản";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 

@@ -27,7 +27,7 @@ namespace DOANCUOIKY.BLL
 
         public DataTable LoadDataQuestionByParameters(int titleID, string questionNo, string question, string status)
         {
-            return wcf.LoadDataQuestionByParemeters(titleID, questionNo, question, status);
+            return wcf.LoadDataQuestionByParameters(titleID, questionNo, question, status);
         }
 
         public Boolean UpdateQuestion(int questionID , int titleID, string question, string A, string B, string C, string D, string answer, string status)

@@ -27,7 +27,7 @@ namespace DOANCUOIKY.BLL
 
         public DataTable LoadDataTitleByParameters(string titleNo, string titleName, int titleCategory)
         {
-            return wcf.LoadDataTitleByParemeters(titleNo, titleName, titleCategory);
+            return wcf.LoadDataTitleByParameters(titleNo, titleName, titleCategory);
         }
 
         public Boolean UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory)

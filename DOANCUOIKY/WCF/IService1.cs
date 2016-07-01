@@ -24,7 +24,7 @@ namespace WcfService1
         DataTable LoadDataTitle();
 
         [OperationContract]
-        DataTable LoadDataTitleByParemeters(string titleNo, string titleName, int titleCategory);
+        DataTable LoadDataTitleByParameters(string titleNo, string titleName, int titleCategory);
 
         [OperationContract]
         Boolean UpdateTitle(string titleID, string titleNo, string titleName, int titleCategory);
@@ -42,7 +42,7 @@ namespace WcfService1
         DataTable LoadDataCategory();
 
         [OperationContract]
-        DataTable LoadDataCategoryByParemeters(string categoryNo, string categoryName);
+        DataTable LoadDataCategoryByParameters(string categoryNo, string categoryName);
 
         [OperationContract]
         Boolean UpdateCategory(string categoryID, string categoryNo, string categoryName);
@@ -59,7 +59,7 @@ namespace WcfService1
         DataTable LoadDataQuestion();
 
         [OperationContract]
-        DataTable LoadDataQuestionByParemeters(int titleID, string questionNo, string question, string status);
+        DataTable LoadDataQuestionByParameters(int titleID, string questionNo, string question, string status);
 
         [OperationContract]
         Boolean UpdateQuestion(int questionID, int titleID, string question, string A, string B, string C, string D, string answer, string status);
@@ -67,6 +67,18 @@ namespace WcfService1
         [OperationContract]
         Boolean DeleteQuestion(string questionID);
         //--------------
+
+        //Dành cho Lịch sử thi của các sinh viên(Teacher)
+        [OperationContract]
+        DataTable LoadDataStudentByParameters(string studentNo, string studentName);
+
+        [OperationContract]
+        DataTable LoadDataExamByParameters(string studentID);
+
+        [OperationContract]
+        DataTable LoadDataExamLineByParameters(string examHeaderID);
+
+        //-----------------------------------------------
 
         [OperationContract]
         string InsertCreateAccount(CreateAccount c);

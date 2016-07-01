@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CategoryBLL.cs" />
+    <Compile Include="BLL\HistoryExamBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\QuestionBLL.cs" />
     <Compile Include="BLL\TitleBLL.cs" />
@@ -144,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmExamTest.resx">
       <DependentUpon>frmExamTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmHistoryExam.resx">
+      <DependentUpon>frmHistoryExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>

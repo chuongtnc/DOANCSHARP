@@ -20,7 +20,7 @@ namespace WcfService1
         SqlCommand cmd;
         public Service1()
         {
-            con = new SqlConnection(@"Data Source=PE-CHUT\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=DOANCUOIKY;Integrated Security=True");
             //comm = con.CreateCommand();
         }
 
@@ -102,7 +102,7 @@ namespace WcfService1
             return dt;
         }
 
-        public DataTable LoadDataTitleByParemeters(string titleNo, string titleName, int titleCategory)
+        public DataTable LoadDataTitleByParameters(string titleNo, string titleName, int titleCategory)
         {
             con.Open();
 
@@ -201,7 +201,7 @@ namespace WcfService1
             return dt;
         }
 
-        public DataTable LoadDataCategoryByParemeters(string categoryNo, string categoryName)
+        public DataTable LoadDataCategoryByParameters(string categoryNo, string categoryName)
         {
             con.Open();
 
@@ -306,7 +306,7 @@ namespace WcfService1
             return dt;
         }
 
-        public DataTable LoadDataQuestionByParemeters(int titleID,string questionNo, string question, string status)
+        public DataTable LoadDataQuestionByParameters(int titleID,string questionNo, string question, string status)
         {
             con.Open();
 
@@ -362,6 +362,55 @@ namespace WcfService1
         }
         //----------------------
 
+        //Các hàm danh cho HistoryExam
+
+        public DataTable LoadDataStudentByParameters(string studentNo, string studentName)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("SELECT ID,NO,NAME FROM ACCOUNT WHERE NO LIKE '%'+ @studentNo +'%' AND NAME LIKE '%'+ @studentName +'%' AND POSITION <> 'ADMIN'", con);
+            cmd.Parameters.AddWithValue("@studentNo", studentNo);
+            cmd.Parameters.AddWithValue("@studentName", studentName);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataStudent");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        public DataTable LoadDataExamByParameters(string studentID)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("SELECT ID,DATE,TOTAL_QUESTION,TOTAL_TRUE_ANSWER,SCORE FROM EXAM_HEADER WHERE ACCOUNT_ID = @studentID ", con);
+            cmd.Parameters.AddWithValue("@studentID", studentID);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataExam");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        public DataTable LoadDataExamLineByParameters(string examHeaderID)
+        {
+            con.Open();
+
+            cmd = new SqlCommand("SELECT ID,QUESTION_ID,ANSWER FROM EXAM_LINE WHERE EXAM_HEADER_ID = @examHeaderID ", con);
+            cmd.Parameters.AddWithValue("@examHeaderID", examHeaderID);
+
+            da = new SqlDataAdapter(cmd);
+            var dt = new DataTable("DataExam");
+            da.Fill(dt);
+
+            con.Close();
+            return dt;
+        }
+
+        //----------------------------
 
 
         public string InsertCreateAccount(CreateAccount c)
